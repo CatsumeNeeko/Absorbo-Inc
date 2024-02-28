@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b888147e9cdb1324eae367fee7ef1a6c, type: 3}
+  m_Name: EnemyCharacter
+  m_EditorClassIdentifier: 
+  name: baseo
+  model: {fileID: 0}
+  enemyID: 1
+  isRanged: 0
+  baseMaxHealth: 100
+  damage: 10
+  defPenetration: 1
+  baseMovementSpeed: 1.5
+  baseMinimumMovementSpeed: 0.5
+  baseDefence: 1
+  attackRange: 1.5
+  attackCooldown: 1
+  selfHeal: 0
+  healthStates: 3
+  colourStates:
+  - {r: 7.694258e+33, g: 6.43e-43, b: 1e-45, a: 0}
+  - {r: -23.369568, g: 6.4e-43, b: 4.6e-44, a: 0}
+  - {r: 7.694258e+33, g: 6.43e-43, b: 7.6942777e+33, a: 6.43e-43}
