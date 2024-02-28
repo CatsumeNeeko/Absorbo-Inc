@@ -93,24 +93,49 @@ public class PlayerMovement : MonoBehaviour
             EnemyStats enemy = col.GetComponent<EnemyStats>();
             if (enemy != null && enemy.isDead)
             {
-                Debug.Log("Found a dead enemy!");
-                Debug.Log(enemy.enemyID);
+                //Debug.Log("Found a dead enemy!");
+                //Debug.Log(enemy.enemyID);
+                //for (int i = 0; i < playerStats.stomachArray.Length; i++)
+                //{
+                //    if(playerStats.stomachArray[i] == 0)
+                //    {
+                //        playerStats.stomachArray[i] = enemy.enemyID;                       
+                //        break;
+                //    }
+
+                //}
+                bool stomachFull = true;
                 for (int i = 0; i < playerStats.stomachArray.Length; i++)
                 {
                     if(playerStats.stomachArray[i] == 0)
                     {
-                        playerStats.stomachArray[i] = enemy.enemyID;                       
+                        stomachFull = false;
                         break;
                     }
-                    //else
-                    //{
-                    //    playerStats.stomachArray[5] = playerStats.stomachArray[4];
-                    //    playerStats.stomachArray[4] = playerStats.stomachArray[3];
-                    //    playerStats.stomachArray[3] = playerStats.stomachArray[2];
-                    //    playerStats.stomachArray[2] = playerStats.stomachArray[1];
-                    //    playerStats.stomachArray[1] = enemy.enemyID;
-                    //}
-                    
+                }
+                if (stomachFull)
+                {
+                    // Remove oldest slot by shifting elements to the right
+                    for (int i = playerStats.stomachArray.Length - 1; i > 0; i--)
+                    {
+                        playerStats.stomachArray[i] = playerStats.stomachArray[i - 1];
+                        
+                    }
+
+                    // Add the new value to the first slot
+                    playerStats.stomachArray[0] = enemy.enemyID;
+                }
+                else
+                {
+                    // Add the value to the first available slot
+                    for (int i = 0; i < playerStats.stomachArray.Length; i++)
+                    {
+                        if (playerStats.stomachArray[i] == 0)
+                        {
+                            playerStats.stomachArray[i] = enemy.enemyID;
+                            break;
+                        }
+                    }
                 }
             }
 

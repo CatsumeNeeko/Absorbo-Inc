@@ -10,23 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b888147e9cdb1324eae367fee7ef1a6c, type: 3}
-  m_Name: EnemyCharacter
+  m_Name: boop
   m_EditorClassIdentifier: 
-  name: baseo
+  name: boop
   model: {fileID: 0}
-  enemyID: 1
+  enemyID: 2
   isRanged: 0
-  baseMaxHealth: 100
-  damage: 10
-  defPenetration: 1
-  baseMovementSpeed: 1.5
-  baseMinimumMovementSpeed: 0.5
-  baseDefence: 1
+  baseMaxHealth: 200
+  damage: 5
+  defPenetration: 2
+  baseMovementSpeed: 1
+  baseMinimumMovementSpeed: 0.6
+  baseDefence: 3
   attackRange: 1.5
   attackCooldown: 1
   selfHeal: 0
-  healthStates: 3
-  colourStates:
-  - {r: 7.694258e+33, g: 6.43e-43, b: 1e-45, a: 0}
-  - {r: -23.369568, g: 6.4e-43, b: 4.6e-44, a: 0}
-  - {r: 7.694258e+33, g: 6.43e-43, b: 7.6942777e+33, a: 6.43e-43}
+  healthStates: 0
+  colourStates: []
