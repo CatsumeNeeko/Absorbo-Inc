@@ -24,6 +24,9 @@ public class EnemyStats : MonoBehaviour
     public bool canHeal;
     public bool isDead;
     public int enemyID;
+    public bool isRanged;
+    public GameObject projectile;
+    public float projectileSpeed;
 
     private void Awake()
     {
@@ -32,15 +35,22 @@ public class EnemyStats : MonoBehaviour
         maxDefense = enemyStats.baseDefence;
         maxMovementSpeed = enemyStats.baseMovementSpeed;
         minMovementSpeed = enemyStats.baseMinimumMovementSpeed;
+        //Current Stats
+        currentHealth = maxHealth;
+        currentDefense = maxDefense;
+        currentMovementSpeed = maxMovementSpeed;
+        //other stats
         attackCD = enemyStats.attackCooldown;
         attackRange = enemyStats.attackRange;
         damage = enemyStats.damage;
         defPenetration = enemyStats.defPenetration;
         enemyID = enemyStats.enemyID;
-        //Current Stats
-        currentHealth = maxHealth;
-        currentDefense = maxDefense;
-        currentMovementSpeed = maxMovementSpeed;
+        isRanged = enemyStats.isRanged;
+        if(enemyStats.projectile != null)
+        {
+            projectile = enemyStats.projectile;
+            projectileSpeed = enemyStats.baseProjectileSpeed;
+        }
     }
     public void Update()
     {

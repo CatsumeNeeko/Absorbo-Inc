@@ -44,7 +44,6 @@ public class PlayerMovement : MonoBehaviour
                         //Debug.Log("GroundHit");
                         break;
                     case "Enemy":
-                        playerStats.canAuto = false;
                         AutoAttack(hit);
 
                         //need to fix the autoattack so it shoots out and doesnt repeat the event 100 of times a second 
@@ -66,11 +65,33 @@ public class PlayerMovement : MonoBehaviour
     
     public void AutoAttack(RaycastHit hit)
     {
-        HealthManager health = hit.collider.GetComponent<HealthManager>();
-        if(health != null)
+        
+        if (playerStats.canAuto)
         {
-            health.TakeDamage(1);
+            playerStats.AutoTimer();
+            GameObject autoBullet = Instantiate(autoAttackGO, transform.position, Quaternion.identity);
+            PlayerAutoBullet playerAutoBullet = autoBullet.GetComponent<PlayerAutoBullet>();
+            if(playerAutoBullet != null)
+            {
+                playerAutoBullet.SetTarget(hit.transform);
+            }
+
+
+
+            //autoBullet.GetComponent<PlayerAutoBullet>().target = hit.transform;
+            //Vector3 direction = (hit.point - transform.position).normalized;
+            //Rigidbody bulletRigidbody = autoBullet.GetComponent<Rigidbody>();
+            //bulletRigidbody.velocity = direction * 10f;
+
+            //Physics.IgnoreCollision(autoBullet.GetComponent<Collider>(), GetComponent<Collider>());
         }
+
+        //HealthManager health = hit.collider.GetComponent<HealthManager>();
+        //if(health != null)
+        //{
+        //    health.TakeDamage(1);
+        //}
+
 
 
         //Transform target = hit.collider.transform;

@@ -9,7 +9,7 @@ public class EnemiesSo : ScriptableObject
     public new string name;
     public GameObject model;
     public int enemyID;
-    public bool isRanged;
+
     [Header("ResourceStats")]
     public float baseMaxHealth;
     public float damage;
@@ -24,4 +24,8 @@ public class EnemiesSo : ScriptableObject
     [Header("VisualInfo")]
     public int healthStates;
     public Color[] colourStates;
+    [Header("RangedCharacterInfo")]
+    public bool isRanged;
+    public GameObject projectile;
+    public float baseProjectileSpeed;
 }

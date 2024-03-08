@@ -53,12 +53,36 @@ public class PlayerStats : MonoBehaviour
         currentResourceAmmount = maxResourceAmmount;
         resourceRegen = playerCharacterStats.baseResourceRegen;
         currentMovementSpeed = minMovementSpeed;
+        //autoAttack ststs
+        autoAttackTimer = playerCharacterStats.baseAutoTimer;
     }
     public void Update()
     {
-        
+        StomachSearch();
+    }
+    public void StomachSearch()
+    {
+
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /// <summary>
+    /// The section below are used for timers 
+    /// </summary>
     public void ConsumeTimer()
     {
         if(canConsume)

@@ -39,9 +39,9 @@ public class EnemyMovement : MonoBehaviour
             if (Time.time - lastAttackTime >= enemies.attackCD)
             {
                 lastAttackTime = Time.time;
-                if (isRanged)
+                if (enemies.isRanged)
                 {
-
+                    RangedAttack();
                 }
                 else
                 {
@@ -70,5 +70,10 @@ public class EnemyMovement : MonoBehaviour
     void RangedAttack()
     {
         //create projectile 
+        transform.LookAt(target);
+        GameObject bullet = Instantiate(enemies.projectile, transform.position, Quaternion.identity);
+        Vector3 direction = (target.position - transform.position).normalized;
+        bullet.GetComponent<Rigidbody>().velocity = direction * enemies.projectileSpeed;
+
     }
 }

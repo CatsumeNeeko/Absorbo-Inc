@@ -15,15 +15,17 @@ MonoBehaviour:
   name: boop
   model: {fileID: 0}
   enemyID: 2
-  isRanged: 0
   baseMaxHealth: 200
   damage: 5
   defPenetration: 2
   baseMovementSpeed: 1
   baseMinimumMovementSpeed: 0.6
   baseDefence: 3
-  attackRange: 1.5
+  attackRange: 5
   attackCooldown: 1
   selfHeal: 0
   healthStates: 0
   colourStates: []
+  isRanged: 1
+  projectile: {fileID: 4590033220840588217, guid: e5cc42a504951e744a8b0eea84506edf, type: 3}
+  baseProjectileSpeed: 3
