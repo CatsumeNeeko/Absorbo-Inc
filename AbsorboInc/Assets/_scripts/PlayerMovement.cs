@@ -61,6 +61,14 @@ public class PlayerMovement : MonoBehaviour
             Consume();
             playerStats.ConsumeTimer();
         }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            playerStats.AbilityOneTimer();
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            playerStats.AbilityTwoTimer();
+        }
     }
     
     public void AutoAttack(RaycastHit hit)
@@ -75,15 +83,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 playerAutoBullet.SetTarget(hit.transform);
             }
-
-
-
-            //autoBullet.GetComponent<PlayerAutoBullet>().target = hit.transform;
-            //Vector3 direction = (hit.point - transform.position).normalized;
-            //Rigidbody bulletRigidbody = autoBullet.GetComponent<Rigidbody>();
-            //bulletRigidbody.velocity = direction * 10f;
-
-            //Physics.IgnoreCollision(autoBullet.GetComponent<Collider>(), GetComponent<Collider>());
         }
 
         //HealthManager health = hit.collider.GetComponent<HealthManager>();
@@ -92,13 +91,6 @@ public class PlayerMovement : MonoBehaviour
         //    health.TakeDamage(1);
         //}
 
-
-
-        //Transform target = hit.collider.transform;
-        //Vector3 spawnPosition = transform.position;
-        //GameObject spawnedObject = Instantiate(autoAttackGO, spawnPosition, Quaternion.identity);
-        //Vector3 direction = (hit.point - spawnPosition).normalized;
-        //spawnedObject.GetComponent<Rigidbody>().velocity = direction * speed;
     }
     /// <summary>
     /// Idea one: Uses a box collider around the player and will check if any of the enemies around are dead if they are it will get the id of the enemy and add that ID to the first empty array slot in player stats. 

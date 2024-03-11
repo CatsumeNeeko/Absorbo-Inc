@@ -32,6 +32,9 @@ public class PlayerStats : MonoBehaviour
     [Header("AutoAttack Related Stats")]
     public bool canAuto = true;
     public float autoAttackTimer;
+    [Header("Ability Related Stats")]
+    public bool canAbilityOne = true, canAbilityTwo = true;
+    public float abilityOneTimer = 2f, abilityTwoTimer = 5f;
 
 
     private void Start()
@@ -99,6 +102,22 @@ public class PlayerStats : MonoBehaviour
             StartCoroutine("AutoEnum");
         }
     }
+    public void AbilityOneTimer()
+    {
+        if (canAbilityOne)
+        {
+            canAbilityOne = false;
+            StartCoroutine("AbilityOneEnum");
+        }
+    }
+    public void AbilityTwoTimer()
+    {
+        if (canAbilityTwo)
+        {
+            canAbilityTwo = false;
+            StartCoroutine("AbilityTwoEnum");
+        }
+    }
     IEnumerator ConsumeEnum()
     {
         yield return new WaitForSeconds(consumeTimer);
@@ -108,5 +127,15 @@ public class PlayerStats : MonoBehaviour
     {
         yield return new WaitForSeconds(autoAttackTimer);
         canAuto = true;
+    }
+    IEnumerator AbilityOneEnum()
+    {
+        yield return new WaitForSeconds(abilityOneTimer);
+        canAbilityOne = true;
+    }
+    IEnumerator AbilityTwoEnum()
+    {
+        yield return new WaitForSeconds(abilityTwoTimer);
+        canAbilityTwo = true;
     }
 }

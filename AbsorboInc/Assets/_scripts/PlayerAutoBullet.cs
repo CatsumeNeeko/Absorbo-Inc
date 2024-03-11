@@ -38,17 +38,7 @@ public class PlayerAutoBullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //if (other.CompareTag("Enemy"))
-        //{
-        //    Debug.Log("Hit enemy");
-        //    HealthManager health = other.GetComponent<HealthManager>();
-        //    if(health != null)
-        //    {
-        //        health.TakeDamage(5);
-        //        Destroy(gameObject);
-        //    }
-        //}
-        if(target != null && ReferenceEquals(other.gameObject, target.gameObject))
+        if (target != null && ReferenceEquals(other.gameObject, target.gameObject))
         {
             Debug.Log("Hit enemy");
             HealthManager health = other.GetComponent<HealthManager>();
