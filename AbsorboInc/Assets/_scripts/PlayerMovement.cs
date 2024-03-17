@@ -64,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q))
         {
             playerStats.AbilityOneTimer();
+            playerStats.ActivateFirstAbility(gameObject);
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
