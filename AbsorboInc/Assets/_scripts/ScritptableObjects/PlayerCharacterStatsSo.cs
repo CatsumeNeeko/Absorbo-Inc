@@ -29,4 +29,5 @@ public class PlayerCharacterStatsSo : ScriptableObject
     public float baseMinAttackSpeed;
     public float baseConsumeTimer;
     public float baseAutoTimer;
+    public float baseAutoDamage;
 }

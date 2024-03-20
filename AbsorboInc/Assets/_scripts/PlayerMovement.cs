@@ -63,11 +63,13 @@ public class PlayerMovement : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            playerStats.AbilityOneTimer();
+            //playerStats.AbilityOneTimer();
             playerStats.ActivateFirstAbility(gameObject);
+            playerStats.AbilityOneTimer();
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
+            playerStats.ActivateSecondAbility(gameObject);
             playerStats.AbilityTwoTimer();
         }
     }

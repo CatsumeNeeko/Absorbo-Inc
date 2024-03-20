@@ -137,16 +137,20 @@ public class PlayerStats : MonoBehaviour
     }
     public void ActivateFirstAbility(GameObject user)
     {
-        abilityOneTimer = abilities[0].cooldown;
         if (abilities[0] != null && canAbilityOne)
         {
             abilities[0].ActivateAbility(user);
             AbilityOneTimer();
         }
+        else if(canAbilityOne == false)
+        {
+            Debug.Log("On Cooldown");
+        }
         else
         {
             Debug.LogError("First ability not set.");
         }
+        abilityOneTimer = abilities[0].cooldown;
     }
 
     // Activate the second ability
@@ -157,9 +161,43 @@ public class PlayerStats : MonoBehaviour
             abilities[1].ActivateAbility(user);
             AbilityTwoTimer();
         }
+        else if(canAbilityTwo == false)
+        {
+            Debug.Log("On Cooldown");
+        }
         else
         {
             Debug.LogError("Second ability not set.");
+        }
+        abilityTwoTimer = abilities[1].cooldown;
+    }
+
+    public void UpdateAbiltyCoolDowns()
+    {
+        if (abilities[0] != null)
+        {
+            abilityOneTimer = abilities[0].cooldown;
+        }
+        if (abilities[1] != null)
+        {
+            abilityTwoTimer = abilities[1].cooldown;
+        }
+    }
+    public void PassiveCheck()
+    {
+        if (abilities[0] != null)
+        {
+            if (abilities[0].isPassive)
+            {
+                ActivateFirstAbility(gameObject);
+            }
+        }
+        if(abilities[1] != null)
+        {
+            if (abilities[1].isPassive)
+            {
+                ActivateSecondAbility(gameObject);
+            }
         }
     }
 
@@ -169,9 +207,8 @@ public class PlayerStats : MonoBehaviour
 
 
 
-
-
     #endregion
+    #region Timers
     /// <summary>
     /// The section below are used for timers 
     /// </summary>
@@ -227,4 +264,5 @@ public class PlayerStats : MonoBehaviour
         yield return new WaitForSeconds(abilityTwoTimer);
         canAbilityTwo = true;
     }
+    #endregion
 }
