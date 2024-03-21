@@ -33,6 +33,7 @@ public class PlayerStats : MonoBehaviour
     [Header("AutoAttack Related Stats")]
     public bool canAuto = true;
     public float autoAttackTimer;
+    public float currentAutoDamage;
     [Header("Ability Related Stats")]
 
     private float[] cooldowntimers;
@@ -62,6 +63,7 @@ public class PlayerStats : MonoBehaviour
         currentMovementSpeed = minMovementSpeed;
         //autoAttack ststs
         autoAttackTimer = playerCharacterStats.baseAutoTimer;
+        currentAutoDamage = playerCharacterStats.baseAutoDamage;
         //Ability Stats
         cooldowntimers = new float[abilities.Length];
     }

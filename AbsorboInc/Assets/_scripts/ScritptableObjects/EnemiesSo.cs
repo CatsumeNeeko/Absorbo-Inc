@@ -23,7 +23,7 @@ public class EnemiesSo : ScriptableObject
     public bool selfHeal;
     [Header("VisualInfo")]
     public int healthStates;
-    public Color[] colourStates;
+    public Material[] colourStates;
     [Header("RangedCharacterInfo")]
     public bool isRanged;
     public GameObject projectile;

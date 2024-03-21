@@ -11,6 +11,9 @@ public class HealthManager : MonoBehaviour
     [Header("Info")]
     [SerializeField] float damageReduction;
 
+
+
+
     public void TakeDamage(float damage)
     {
         if(playerStats != null)
@@ -33,6 +36,7 @@ public class HealthManager : MonoBehaviour
             if(enemyStats.currentHealth > 0)
             {
                 enemyStats.currentHealth -= damage / damageReduction;
+                UpdateMaterial();
                 if(enemyStats.currentHealth <= 0)
                 {
                     Die();
@@ -57,15 +61,29 @@ public class HealthManager : MonoBehaviour
             enemyStats.isDead = true;
         }
     }
+
+    void UpdateMaterial()
+    {
+        Debug.Log("UpdateMaterial");
+        float healthPercentage = enemyStats.currentHealth / enemyStats.maxHealth;
+        int healthIndex = Mathf.Clamp(Mathf.FloorToInt((1 - healthPercentage) * enemyStats.colourStates.Length), 0, enemyStats.colourStates.Length - 1);
+        //int healthIndex = Mathf.Clamp(Mathf.FloorToInt(healthPercentage * enemyStats.colourStates.Length), 0, enemyStats.colourStates.Length - 1);
+
+        enemyStats.renderer.material = enemyStats.colourStates[healthIndex];
+    }
+
     public void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            TakeDamage(10f);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            HealDamage(10f);
-        }
+        //if (Input.GetKeyDown(KeyCode.Alpha1))
+        //{
+        //    TakeDamage(10f);
+        //}
+        //if (Input.GetKeyDown(KeyCode.Alpha2))
+        //{
+        //    HealDamage(10f);
+        //}
+
+
+
     }
 }

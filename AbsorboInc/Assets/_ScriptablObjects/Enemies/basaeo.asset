@@ -15,7 +15,6 @@ MonoBehaviour:
   name: baseo
   model: {fileID: 0}
   enemyID: 1
-  isRanged: 0
   baseMaxHealth: 100
   damage: 10
   defPenetration: 1
@@ -27,6 +26,9 @@ MonoBehaviour:
   selfHeal: 0
   healthStates: 3
   colourStates:
-  - {r: 7.694258e+33, g: 6.43e-43, b: 1e-45, a: 0}
-  - {r: -23.369568, g: 6.4e-43, b: 4.6e-44, a: 0}
-  - {r: 7.694258e+33, g: 6.43e-43, b: 7.6942777e+33, a: 6.43e-43}
+  - {fileID: 2100000, guid: 6cf2dca85790f6b428c7f2dce2949bdd, type: 2}
+  - {fileID: 2100000, guid: 18a878e4d9f94204e8570eb0b57fb234, type: 2}
+  - {fileID: 2100000, guid: 234ee546a88810146a6f7f75a0415979, type: 2}
+  isRanged: 0
+  projectile: {fileID: 0}
+  baseProjectileSpeed: 0

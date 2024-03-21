@@ -27,6 +27,9 @@ public class EnemyStats : MonoBehaviour
     public bool isRanged;
     public GameObject projectile;
     public float projectileSpeed;
+    [Header("Visual Info")]
+    public Material[] colourStates;
+    public Renderer renderer;
 
     private void Awake()
     {
@@ -51,6 +54,8 @@ public class EnemyStats : MonoBehaviour
             projectile = enemyStats.projectile;
             projectileSpeed = enemyStats.baseProjectileSpeed;
         }
+        colourStates = enemyStats.colourStates;
+        renderer = transform.GetChild(0).GetComponent<Renderer>();
     }
     public void Update()
     {

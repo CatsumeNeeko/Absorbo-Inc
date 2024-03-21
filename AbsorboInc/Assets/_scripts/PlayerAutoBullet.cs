@@ -44,7 +44,7 @@ public class PlayerAutoBullet : MonoBehaviour
             HealthManager health = other.GetComponent<HealthManager>();
             if (health != null)
             {
-                health.TakeDamage(5);
+                health.TakeDamage(playerStats.currentAutoDamage);
                 Debug.Log("Health Remaining" + health.enemyStats.currentHealth);
                 Destroy(gameObject);
             }

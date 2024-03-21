@@ -9,10 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa87e41864d6a844c99363b87b6f405e, type: 3}
-  m_Name: New Teleport Ability
+  m_Script: {fileID: 11500000, guid: ee0a4264e11d10a4fabf490d43e8c45b, type: 3}
+  m_Name: Summon
   m_EditorClassIdentifier: 
-  name: TpoWo
+  name: Fight For Me!!
   isPassive: 0
-  cooldown: 5
-  teleportRange: 100
+  cooldown: 20
+  summonedObject: {fileID: 5152327994689494711, guid: 9a17cfb35753be143ac6e11334b867dc, type: 3}
+  summonLocation: {fileID: 0}
+  summonRange: 20

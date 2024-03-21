@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Update()
     {
+        navMeshAgent.speed = playerStats.currentMovementSpeed;
         if (Input.GetMouseButton(1) || Input.GetMouseButtonDown(1))
         {
             //Debug.Log("Rightclick pressed");
