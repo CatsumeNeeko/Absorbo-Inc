@@ -15,6 +15,6 @@ MonoBehaviour:
   name: Fight For Me!!
   isPassive: 0
   cooldown: 20
-  summonedObject: {fileID: 5152327994689494711, guid: 9a17cfb35753be143ac6e11334b867dc, type: 3}
+  summonedObject: {fileID: 6901025363409467123, guid: 8098cf5cdeb21244b905b6f76a56ece8, type: 3}
   summonLocation: {fileID: 0}
   summonRange: 20

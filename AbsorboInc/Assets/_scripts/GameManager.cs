@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public float survivalTimer;
-    public float survivalPercentage;
+    public float stabilityTimer;
+    public float stabilityPercentage;
     private float maximumTime = 150f;
 
     private void Start()
     {
-        survivalTimer = maximumTime;
+        stabilityTimer = maximumTime;
     }
     public void Update()
     {
@@ -18,9 +18,9 @@ public class GameManager : MonoBehaviour
     }
     public void Timer()
     {
-        survivalTimer -= Time.deltaTime;
-        survivalPercentage = (survivalTimer / maximumTime) * 100;
-        if(survivalTimer <= 0f)
+        stabilityTimer -= Time.deltaTime;
+        stabilityPercentage = (stabilityTimer / maximumTime) * 100;
+        if(stabilityTimer <= 0f)
         {
             Debug.Log("Time out");
         }

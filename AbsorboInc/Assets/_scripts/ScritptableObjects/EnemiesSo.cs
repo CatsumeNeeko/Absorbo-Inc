@@ -9,7 +9,7 @@ public class EnemiesSo : ScriptableObject
     public new string name;
     public GameObject model;
     public int enemyID;
-
+    public float stabilityValue;
     [Header("ResourceStats")]
     public float baseMaxHealth;
     public float damage;

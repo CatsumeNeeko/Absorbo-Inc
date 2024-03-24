@@ -40,7 +40,7 @@ public class GameUiMangaer : MonoBehaviour
     }
     public void StabilityUi()
     {
-        stabilityTimerText.text = gameManager.survivalPercentage.ToString("F0");
+        stabilityTimerText.text = gameManager.stabilityPercentage.ToString("F0");
     }
     public void HealthBarUI()
     {

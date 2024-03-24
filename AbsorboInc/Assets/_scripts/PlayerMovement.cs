@@ -89,11 +89,6 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        //HealthManager health = hit.collider.GetComponent<HealthManager>();
-        //if(health != null)
-        //{
-        //    health.TakeDamage(1);
-        //}
 
     }
     /// <summary>
@@ -110,17 +105,6 @@ public class PlayerMovement : MonoBehaviour
             EnemyStats enemy = col.GetComponent<EnemyStats>();
             if (enemy != null && enemy.isDead)
             {
-                //Debug.Log("Found a dead enemy!");
-                //Debug.Log(enemy.enemyID);
-                //for (int i = 0; i < playerStats.stomachArray.Length; i++)
-                //{
-                //    if(playerStats.stomachArray[i] == 0)
-                //    {
-                //        playerStats.stomachArray[i] = enemy.enemyID;                       
-                //        break;
-                //    }
-
-                //}
                 bool stomachFull = true;
                 for (int i = 0; i < playerStats.stomachArray.Length; i++)
                 {
@@ -154,14 +138,9 @@ public class PlayerMovement : MonoBehaviour
                         }
                     }
                 }
+                Destroy(col.gameObject);
             }
 
         }
     }
-    //private void OnDrawGizmosSelected()
-    //{
-    //    // Visualize detection radius in editor
-    //    Gizmos.color = Color.red;
-    //    Gizmos.DrawWireSphere(transform.position, consumeRange);
-    //}
 }

@@ -49,6 +49,7 @@ public class PlayerAutoBullet : MonoBehaviour
                 Destroy(gameObject);
             }
         }
+
     }
     
 }
