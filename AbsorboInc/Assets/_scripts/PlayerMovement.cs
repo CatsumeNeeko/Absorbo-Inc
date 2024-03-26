@@ -42,13 +42,9 @@ public class PlayerMovement : MonoBehaviour
                 {
                     case "Ground":
                         navMeshAgent.SetDestination(hit.point);
-                        //Debug.Log("GroundHit");
                         break;
                     case "Enemy":
                         AutoAttack(hit);
-
-                        //need to fix the autoattack so it shoots out and doesnt repeat the event 100 of times a second 
-
                         break;
                     case "PickUp":
                         navMeshAgent.SetDestination(hit.point);
@@ -56,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
-
+        //Might need to change this for visual clarity where on key down it will show the ability indicators and on get key up activate the ability
         if (Input.GetKeyDown(KeyCode.E))
         {
             Consume();
