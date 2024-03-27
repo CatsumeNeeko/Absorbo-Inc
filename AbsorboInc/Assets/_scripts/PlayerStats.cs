@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerStats : MonoBehaviour
 {
     [Header("Dependancies")]
     public PlayerCharacterStatsSo playerCharacterStats;
+    public PlayerAbilityList playerAbilityList;
     public AbilitySO[] abilities; 
     [Header("Health Related Stats")]
     public float currentHealth;
@@ -37,14 +39,13 @@ public class PlayerStats : MonoBehaviour
     [Header("Ability Related Stats")]
 
     private float[] cooldowntimers;
-    public bool canAbilityOne = true, canAbilityTwo = true;
-    public float abilityOneTimer , abilityTwoTimer ;
-
+    public bool canAbilityOne = true, canAbilityTwo = true ,canAbilityThree = true;
+    public float abilityOneTimer , abilityTwoTimer , abilityThreeTimer ;
 
     private void Start()
     {
         //array
-        abilities = new AbilitySO[2];
+        abilities = new AbilitySO[3];
         stomachArray = new int[5];
         consumeTimer = playerCharacterStats.baseConsumeTimer;
         //Max/Min Stats
@@ -67,38 +68,40 @@ public class PlayerStats : MonoBehaviour
         //Ability Stats
         cooldowntimers = new float[abilities.Length];
     }
-    public void Update()
+    public void FixedUpdate()
     {
         StomachSearch();
     }
-
     #region Stomach
     public void StomachSearch()
     {
-        //Debug.Log("StomachSearch");
-        int[] valueCount = new int[11];// the 11 is just a base estimate of the ammoumnt of enemeies being 10* 0 is null 
-
-        foreach (int value in stomachArray)
+        if(!lockStomach)
         {
-            valueCount[value]++;
-        }
+            int[] valueCount = new int[11];// the 11 is just a base estimate of the ammoumnt of enemeies being 10* 0 is null 
 
-        for (int i = 0; i < valueCount.Length; i++)
-        {
-            if (valueCount[i] == 2)
+            foreach (int value in stomachArray)
             {
-                //Debug.Log("Two occurrences of value " + i);
-                StomachFilledTwo(i);
+                valueCount[value]++;
             }
-            else if (valueCount[i] == 3)
+
+            for (int i = 0; i < valueCount.Length; i++)
             {
-                //Debug.Log("Three occurrences of value " + i);
-                StomachFilledThree(i);
-            }
-            else if(valueCount[i] == 5 && i != 0)
-            {
-                Debug.Log("Gene Mixed Complete");
-                lockStomach = true;
+                if (valueCount[i] == 2)
+                {
+                    //Debug.Log("Two occurrences of value " + i);
+                    StomachFilledTwo(i);
+                }
+                else if (valueCount[i] == 3)
+                {
+                    //Debug.Log("Three occurrences of value " + i);
+                    StomachFilledThree(i);
+                }
+                else if (valueCount[i] == 5 && i != 0)
+                {
+                    //Debug.Log("Gene Mixed Complete");
+                    lockStomach = true;
+                    StomachFilledFive(i);
+                }
             }
         }
 
@@ -109,7 +112,8 @@ public class PlayerStats : MonoBehaviour
         switch (value)
         {
             case 1:
-                Debug.Log("stomach filled two" + value);
+                //Debug.Log("stomach filled two" + value);
+                UpdateAbility(playerAbilityList.ID1_2);
                 break;
             case 2:
                 Debug.Log("stomach filled two" + value);
@@ -121,7 +125,18 @@ public class PlayerStats : MonoBehaviour
         switch (value)
         {
             case 1:
-                Debug.Log("Stomach Filled Three" + value);
+                //Debug.Log("Stomach Filled Three" + value);
+                UpdateAbility(playerAbilityList.ID1_3);
+                break;
+        }
+    }
+    void StomachFilledFive(int value)
+    {
+        switch(value)
+        {
+            case 1:
+                SetFirstAbility(playerAbilityList.ID1_2);
+                SetSecondAbility(playerAbilityList.ID1_3);
                 break;
         }
     }
@@ -136,6 +151,50 @@ public class PlayerStats : MonoBehaviour
     public void SetSecondAbility(AbilitySO newAbility)
     {
         abilities[1] = newAbility;
+    }
+    public void UpdateAbility(AbilitySO newAbility)
+    {
+        bool abilityListFull = true;
+        for(int i = 0; i< abilities.Length; i++)
+        {
+            if (abilities[i] == null)
+            {
+                abilityListFull = false;
+                break;
+            }
+        }
+        bool abilityInList = false;
+        for(int i = 0 ; i< abilities.Length ; i++)
+        {
+            if (abilities[i] == newAbility)
+            {
+                abilityInList = true;
+                break;
+            }
+        }
+        if(abilityListFull && abilityInList == false)
+        {
+            for(int i = abilities.Length -1; i >= 0; i--)
+            {
+                abilities[i] = abilities[i - 1];
+            }
+            abilities[0] = newAbility;
+        }
+        else if (abilityInList == false)
+        {
+            for (int i = 0; i < abilities.Length; i++)
+            {
+                if (abilities[i] == null)
+                {
+                    abilities[i] = newAbility;
+                    break;
+                }
+            }
+        }
+        else if( abilityInList == true)
+        {
+            Debug.Log(abilityInList);
+        }
     }
     public void ActivateFirstAbility(GameObject user)
     {
@@ -173,7 +232,23 @@ public class PlayerStats : MonoBehaviour
         }
         abilityTwoTimer = abilities[1].cooldown;
     }
-
+    public void ActivateThirdAbility(GameObject user)
+    {
+        if (abilities[2] != null && canAbilityThree)
+        {
+            abilities[2].ActivateAbility(user);
+            AbilityThreeTimer();
+        }
+        else if (canAbilityThree == false)
+        {
+            Debug.Log("On Cooldown");
+        }
+        else
+        {
+            Debug.LogError("Second ability not set.");
+        }
+        abilityThreeTimer = abilities[2].cooldown;
+    }
     public void UpdateAbiltyCoolDowns()
     {
         if (abilities[0] != null)
@@ -246,6 +321,14 @@ public class PlayerStats : MonoBehaviour
             StartCoroutine("AbilityTwoEnum");
         }
     }
+    public void AbilityThreeTimer()
+    {
+        if (canAbilityThree)
+        {
+            canAbilityThree = false;
+            StartCoroutine("AbilityThreeEnum");
+        }
+    }
     IEnumerator ConsumeEnum()
     {
         yield return new WaitForSeconds(consumeTimer);
@@ -265,6 +348,10 @@ public class PlayerStats : MonoBehaviour
     {
         yield return new WaitForSeconds(abilityTwoTimer);
         canAbilityTwo = true;
+    }
+    IEnumerator AbilityThreeEnum()
+    {
+        yield return new WaitForSeconds(abilityThreeTimer);
     }
     #endregion
 }

@@ -64,10 +64,15 @@ public class PlayerMovement : MonoBehaviour
             playerStats.ActivateFirstAbility(gameObject);
             playerStats.AbilityOneTimer();
         }
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.W))
         {
             playerStats.ActivateSecondAbility(gameObject);
             playerStats.AbilityTwoTimer();
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            playerStats.ActivateThirdAbility(gameObject);
+            playerStats.AbilityThreeTimer();
         }
     }
     

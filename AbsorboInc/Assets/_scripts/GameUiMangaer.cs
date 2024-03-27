@@ -23,7 +23,7 @@ public class GameUiMangaer : MonoBehaviour
     [SerializeField] Image ResourceBackground;
     [Header("AbilityVaraibles")]
     //[SerializeField] Image[] AbilityList;
-    [SerializeField] Image AbilityOne, AbilityTwo, ConsumeAbility;
+    [SerializeField] Image AbilityOne, AbilityTwo,AbilityThree,ConsumeAbility;
     // Start is called before the first frame update
     void Start()
     {
@@ -70,6 +70,8 @@ public class GameUiMangaer : MonoBehaviour
         {
             ConsumeAbility.gameObject.SetActive(false);
         }
+
+
         if(playerStats.canAbilityOne == true)
         {
             AbilityOne.gameObject.SetActive(true);
@@ -78,6 +80,8 @@ public class GameUiMangaer : MonoBehaviour
         {
             AbilityOne.gameObject.SetActive(false);
         }
+
+
         if(playerStats.canAbilityTwo == true)
         {
             AbilityTwo.gameObject.SetActive(true);
@@ -85,6 +89,16 @@ public class GameUiMangaer : MonoBehaviour
         else
         {
             AbilityTwo.gameObject.SetActive(false);
+        }
+
+
+        if(playerStats.canAbilityThree == true)
+        {
+            AbilityThree.gameObject.SetActive(true);
+        }
+        else
+        {
+            AbilityThree.gameObject.SetActive(false);
         }
     }
 }
