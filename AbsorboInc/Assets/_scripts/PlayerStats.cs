@@ -37,7 +37,6 @@ public class PlayerStats : MonoBehaviour
     public float autoAttackTimer;
     public float currentAutoDamage;
     [Header("Ability Related Stats")]
-
     private float[] cooldowntimers;
     public bool canAbilityOne = true, canAbilityTwo = true ,canAbilityThree = true;
     public float abilityOneTimer , abilityTwoTimer , abilityThreeTimer ;
@@ -196,6 +195,7 @@ public class PlayerStats : MonoBehaviour
             Debug.Log(abilityInList);
         }
     }
+    //Activate the first ability
     public void ActivateFirstAbility(GameObject user)
     {
         if (abilities[0] != null && canAbilityOne)
@@ -232,6 +232,7 @@ public class PlayerStats : MonoBehaviour
         }
         abilityTwoTimer = abilities[1].cooldown;
     }
+    //Activate the Third ability
     public void ActivateThirdAbility(GameObject user)
     {
         if (abilities[2] != null && canAbilityThree)

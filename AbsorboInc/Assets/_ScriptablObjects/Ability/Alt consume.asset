@@ -9,12 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd561f2bf5d4ae34ea6508394c2cf3b5, type: 3}
-  m_Name: AoeDamage
+  m_Script: {fileID: 11500000, guid: 111800a98b0acda4bab50d58cbb4d72a, type: 3}
+  m_Name: Alt consume
   m_EditorClassIdentifier: 
-  name: Hedgehog Spike
+  name: 
   isPassive: 0
-  cooldown: 7
-  detectionRange: 5
-  percentageDamage: 20
-  minDamage: 5
+  cooldown: 0
+  consumeRange: 0
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0

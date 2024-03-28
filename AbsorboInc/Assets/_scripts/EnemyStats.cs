@@ -30,7 +30,9 @@ public class EnemyStats : MonoBehaviour
     [Header("Visual Info")]
     public Material[] colourStates;
     public Renderer renderer;
-
+    [Header("StabilityInfo")]
+    public float stabilityValue;
+    public float stabilityChance;
     private void Awake()
     {
         //Max/Min Stats
@@ -56,6 +58,8 @@ public class EnemyStats : MonoBehaviour
         }
         colourStates = enemyStats.colourStates;
         renderer = transform.GetChild(0).GetComponent<Renderer>();
+        stabilityValue = enemyStats.stabilityValue;
+        stabilityChance = enemyStats.stabilityChance;
     }
     public void Update()
     {

@@ -104,10 +104,10 @@ public class PlayerMovement : MonoBehaviour
         foreach (Collider col in colliders)
         {
             EnemyStats enemy = col.GetComponent<EnemyStats>();
-            if (enemy != null && enemy.isDead)
+            if (enemy != null && enemy.isDead)//Checks if enemy is dead
             {
                 bool stomachFull = true;
-                for (int i = 0; i < playerStats.stomachArray.Length; i++)
+                for (int i = 0; i < playerStats.stomachArray.Length; i++)//checks if any values in array are zero if yes set stomach full to false
                 {
                     if(playerStats.stomachArray[i] == 0)
                     {
@@ -115,21 +115,18 @@ public class PlayerMovement : MonoBehaviour
                         break;
                     }
                 }
-                if (stomachFull)
+                if (stomachFull)//If stomach is full remove oldest value in array and set slot zero as the value of the enemy eaten
                 {
-                    // Remove oldest slot by shifting elements to the right
+                    
                     for (int i = playerStats.stomachArray.Length - 1; i > 0; i--)
                     {
                         playerStats.stomachArray[i] = playerStats.stomachArray[i - 1];
                         
                     }
-
-                    // Add the new value to the first slot
                     playerStats.stomachArray[0] = enemy.enemyID;
                 }
-                else
+                else//will just add the value to first avaliable empty slot
                 {
-                    // Add the value to the first available slot
                     for (int i = 0; i < playerStats.stomachArray.Length; i++)
                     {
                         if (playerStats.stomachArray[i] == 0)
@@ -139,6 +136,17 @@ public class PlayerMovement : MonoBehaviour
                         }
                     }
                 }
+                
+                //Random chance to increase stability
+                float stabilityChanceValue = Random.Range(0.0f, 1.0f);
+                if (stabilityChanceValue < enemy.stabilityChance)
+                {
+                    Debug.Log(stabilityChanceValue + " < " + enemy.stabilityChance + " success");
+                    GameManager gameManager = GetComponent<GameManager>();
+                    gameManager.stabilityTimer += enemy.stabilityValue;
+                }
+                else
+                    Debug.Log(stabilityChanceValue + " < " + enemy.stabilityChance + " fail");
                 Destroy(col.gameObject);
             }
 
