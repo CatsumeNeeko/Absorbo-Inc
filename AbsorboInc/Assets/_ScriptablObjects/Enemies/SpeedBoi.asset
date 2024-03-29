@@ -16,17 +16,22 @@ MonoBehaviour:
   model: {fileID: 0}
   enemyID: 3
   stabilityValue: 0
+  stabilityChance: 0
   baseMaxHealth: 50
   damage: 5
   defPenetration: 2
   baseMovementSpeed: 3.2
   baseMinimumMovementSpeed: 1
-  baseDefence: 0
+  baseDefence: 1
   attackRange: 1
   attackCooldown: 1
   selfHeal: 0
-  healthStates: 0
-  colourStates: []
+  healthStates: 3
+  colourStates:
+  - {fileID: 2100000, guid: 6cf2dca85790f6b428c7f2dce2949bdd, type: 2}
+  - {fileID: 2100000, guid: 18a878e4d9f94204e8570eb0b57fb234, type: 2}
+  - {fileID: 2100000, guid: 234ee546a88810146a6f7f75a0415979, type: 2}
   isRanged: 0
   projectile: {fileID: 0}
   baseProjectileSpeed: 0
+  hasFeatures: 0

@@ -23,8 +23,17 @@ public class GameManager : MonoBehaviour
         if(stabilityTimer <= 0f)
         {
             Debug.Log("Time out");
+            GameOver();
         }
 
+    }
+    public void IncreaseTimer(float time)
+    {
+        stabilityTimer += time;
+        if(stabilityTimer >= maximumTime)
+        {
+            stabilityTimer = maximumTime;
+        }
     }
     public void GameOver()
     {

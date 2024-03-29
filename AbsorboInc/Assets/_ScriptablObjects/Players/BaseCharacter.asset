@@ -27,4 +27,4 @@ MonoBehaviour:
   baseMinAttackSpeed: 0
   baseConsumeTimer: 2
   baseAutoTimer: 2
-  baseAutoDamage: 10
+  baseAutoDamage: 15

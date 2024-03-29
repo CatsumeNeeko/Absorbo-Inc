@@ -29,4 +29,11 @@ public class EnemiesSo : ScriptableObject
     public bool isRanged;
     public GameObject projectile;
     public float baseProjectileSpeed;
+
+    [Header("Special Features")]
+    public bool hasFeatures;
+    public virtual void UniqueFeature(GameObject owner)
+    {
+
+    }
 }

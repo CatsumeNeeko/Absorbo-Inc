@@ -9,21 +9,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b888147e9cdb1324eae367fee7ef1a6c, type: 3}
-  m_Name: basaeo
+  m_Script: {fileID: 11500000, guid: 9e1073312bccff9449647b02a7d565e9, type: 3}
+  m_Name: Rabbit
   m_EditorClassIdentifier: 
-  name: baseo
+  name: Rabbit
   model: {fileID: 0}
-  enemyID: 1
-  stabilityValue: 5
-  stabilityChance: 0.4
+  enemyID: 3
+  stabilityValue: 2
+  stabilityChance: 100
   baseMaxHealth: 100
-  damage: 10
-  defPenetration: 1
-  baseMovementSpeed: 1.5
-  baseMinimumMovementSpeed: 0.5
+  damage: 5
+  defPenetration: 2
+  baseMovementSpeed: 3.2
+  baseMinimumMovementSpeed: 1
   baseDefence: 1
-  attackRange: 1.5
+  attackRange: 1
   attackCooldown: 1
   selfHeal: 0
   healthStates: 3
@@ -34,3 +34,7 @@ MonoBehaviour:
   isRanged: 0
   projectile: {fileID: 0}
   baseProjectileSpeed: 0
+  hasFeatures: 1
+  hasFlee: 0
+  fleeThreshold: 0.2
+  saveLoc: 1

@@ -9,15 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 111800a98b0acda4bab50d58cbb4d72a, type: 3}
-  m_Name: Alt consume
+  m_Script: {fileID: 11500000, guid: 6898253a14fba0d4bb3275796671b9e3, type: 3}
+  m_Name: Aoe Debuff
   m_EditorClassIdentifier: 
-  name: healing bite
+  name: Stun blast
   isPassive: 0
   cooldown: 5
-  consumeRange: 5
+  shootCooldown: 0
+  aoeCooldown: 5
+  projectile: {fileID: 968808546109378596, guid: 6aa8d3115bcadfb4da1109ab117e7400, type: 3}
+  projectileDuration: 4
+  checkRange: 3
   enemyLayer:
     serializedVersion: 2
     m_Bits: 8
-  healthGainBase: 10
-  enemyPercentage: 0.25
+  debuffDuration: 5
+  spawnedProjectile: {fileID: 0}

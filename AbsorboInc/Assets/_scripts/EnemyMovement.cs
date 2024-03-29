@@ -33,6 +33,7 @@ public class EnemyMovement : MonoBehaviour
     }
     private void Update()
     {
+        navMeshAgent.speed = enemies.currentMovementSpeed;
         if (enemies.isDead == false)
         {
             navMeshAgent.SetDestination(target.position);
@@ -64,6 +65,7 @@ public class EnemyMovement : MonoBehaviour
             if(healthManager != null)
             {
                 healthManager.TakeDamage(enemies.damage);
+
             }
         }
     }

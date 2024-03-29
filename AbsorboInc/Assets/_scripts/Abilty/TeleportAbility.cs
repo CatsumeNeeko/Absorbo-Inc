@@ -26,17 +26,17 @@ public class TeleportAbility : AbilitySO
                 }
                 else
                 {
-                    Debug.LogWarning("Teleport failed: GameObject does not have a NavMeshAgent component.");
+                    Debug.LogWarning("no NavMeshAgent Found");
                 }
             }
             else
             {
-                Debug.LogWarning("Teleport failed: Hit point is not on a NavMesh surface.");
+                Debug.LogWarning("surface doesnt have a navmesh");
             }
         }
         else
         {
-            Debug.LogWarning("Teleport failed: No valid target within range.");
+            Debug.LogWarning("hit isnt in range");
         }
     }
 }

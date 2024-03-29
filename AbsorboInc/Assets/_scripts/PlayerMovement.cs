@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("dependencies")]
     public PlayerStats playerStats;
+    public GameManager manager;
     [Header("Movement Info")]
     [SerializeField] Camera cam;
     [SerializeField] float speed;
@@ -96,6 +97,8 @@ public class PlayerMovement : MonoBehaviour
     /// Idea one: Uses a box collider around the player and will check if any of the enemies around are dead if they are it will get the id of the enemy and add that ID to the first empty array slot in player stats. 
     /// if it isnt empty, remove the ID from slot five and shuffle the rest to the right and place the ID into the first slot
     /// Idea two: use a layermask on the enemies then check if any enemies are in range then check if they are an enemy and are dead
+    /// 
+    /// 
     /// </summary>
     public void Consume()
     {
@@ -136,17 +139,21 @@ public class PlayerMovement : MonoBehaviour
                         }
                     }
                 }
-                
-                //Random chance to increase stability
-                float stabilityChanceValue = Random.Range(0.0f, 1.0f);
-                if (stabilityChanceValue < enemy.stabilityChance)
-                {
-                    Debug.Log(stabilityChanceValue + " < " + enemy.stabilityChance + " success");
-                    GameManager gameManager = GetComponent<GameManager>();
-                    gameManager.stabilityTimer += enemy.stabilityValue;
-                }
-                else
-                    Debug.Log(stabilityChanceValue + " < " + enemy.stabilityChance + " fail");
+                manager.IncreaseTimer(enemy.stabilityValue);
+
+
+                ////Random chance to increase stability
+                //float stabilityChanceValue = Random.Range(0.0f, 1.0f);
+                //if (stabilityChanceValue < enemy.stabilityChance)
+                //{
+                //    Debug.Log(stabilityChanceValue + " < " + enemy.stabilityChance + " success");
+                //    GameManager gameManager = GetComponent<GameManager>();
+                //    gameManager.stabilityTimer += enemy.stabilityValue;
+                //}
+                //else
+                //    Debug.Log(stabilityChanceValue + " < " + enemy.stabilityChance + " fail");
+
+
                 Destroy(col.gameObject);
             }
 

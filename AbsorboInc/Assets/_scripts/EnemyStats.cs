@@ -29,7 +29,7 @@ public class EnemyStats : MonoBehaviour
     public float projectileSpeed;
     [Header("Visual Info")]
     public Material[] colourStates;
-    public Renderer renderer;
+    public new Renderer renderer;
     [Header("StabilityInfo")]
     public float stabilityValue;
     public float stabilityChance;
@@ -63,7 +63,21 @@ public class EnemyStats : MonoBehaviour
     }
     public void Update()
     {
+        
+    }
+    public void FixedUpdate()
+    {
+        SpecialFeatureCheck();
         DeathCheck();
+    }
+
+    void SpecialFeatureCheck()
+    {
+        if(enemyStats.hasFeatures)
+        {
+            enemyStats.UniqueFeature(gameObject);
+            //Debug.Log("tHIS BE DONE");
+        }
     }
     void DeathCheck()
     {

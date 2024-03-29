@@ -17,4 +17,4 @@ MonoBehaviour:
   cooldown: 0
   healthThresholdPercentage: 0.3
   healthRefillAmount: 60
-  lastStandUsed: 0
+  lastStandUsed: 1

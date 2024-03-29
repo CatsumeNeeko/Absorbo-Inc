@@ -28,19 +28,21 @@ public class HealthEat : AbilitySO
 
 
 
-                float Temphealth;
-                Temphealth = playerStats.currentHealth;
-                Temphealth += healthGainBase + enemyHealth;
+                float temphealth;
+                temphealth = playerStats.currentHealth;
+                temphealth += healthGainBase + enemyHealth;
+                float totalHealthGain;
+                totalHealthGain = healthGainBase + enemyHealth;
 
-                playerStats.currentHealth = Temphealth;
+                healthManager.HealDamage(totalHealthGain);
 
-                if(Temphealth > playerStats.maxHealth)
+                if(temphealth > playerStats.maxHealth)
                 {
                     Debug.Log("Overhealth gained");
                     playerStats.maxHealth += 5;
                 }
+                Destroy(col.gameObject);
             }
-            Destroy(col.gameObject);
         }
     }
 }

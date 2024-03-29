@@ -70,6 +70,8 @@ public class PlayerStats : MonoBehaviour
     public void FixedUpdate()
     {
         StomachSearch();
+        PassiveCheck();
+        //UpdateAbiltyCoolDowns();
     }
     #region Stomach
     public void StomachSearch()
@@ -115,7 +117,11 @@ public class PlayerStats : MonoBehaviour
                 UpdateAbility(playerAbilityList.ID1_2);
                 break;
             case 2:
-                Debug.Log("stomach filled two" + value);
+                //Debug.Log("stomach filled two" + value);
+                UpdateAbility(playerAbilityList.ID2_2);
+                break;
+            case 3:
+                UpdateAbility(playerAbilityList.ID3_2);
                 break;
         }
     }
@@ -260,6 +266,10 @@ public class PlayerStats : MonoBehaviour
         {
             abilityTwoTimer = abilities[1].cooldown;
         }
+        if (abilities[2] != null)
+        {
+            abilityThreeTimer= abilities[2].cooldown;
+        }
     }
     public void PassiveCheck()
     {
@@ -268,6 +278,7 @@ public class PlayerStats : MonoBehaviour
             if (abilities[0].isPassive)
             {
                 ActivateFirstAbility(gameObject);
+                Debug.Log("Passive used" + abilities[0].name);
             }
         }
         if(abilities[1] != null)
@@ -275,6 +286,13 @@ public class PlayerStats : MonoBehaviour
             if (abilities[1].isPassive)
             {
                 ActivateSecondAbility(gameObject);
+            }
+        }
+        if (abilities[2] != null)
+        {
+            if (abilities[2].isPassive)
+            {
+                ActivateThirdAbility(gameObject);
             }
         }
     }
