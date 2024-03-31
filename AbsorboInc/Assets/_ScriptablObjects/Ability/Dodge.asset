@@ -16,3 +16,5 @@ MonoBehaviour:
   isPassive: 0
   cooldown: 0
   baseDodgeChance: 0.2
+  dodgeChance: 0.2
+  dodgeIncrease: 0.1

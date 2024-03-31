@@ -179,9 +179,10 @@ public class PlayerStats : MonoBehaviour
         }
         if(abilityListFull && abilityInList == false)
         {
-            for(int i = abilities.Length -1; i >= 0; i--)
+            for(int i = abilities.Length -/* 1 */2; i >= 0; i--)
             {
-                abilities[i] = abilities[i - 1];
+                //abilities[i] = abilities[i - 1];
+                abilities[i + 1] = abilities[i];
             }
             abilities[0] = newAbility;
         }
@@ -198,7 +199,7 @@ public class PlayerStats : MonoBehaviour
         }
         else if( abilityInList == true)
         {
-            Debug.Log(abilityInList);
+            //Debug.Log(abilityInList);
         }
     }
     //Activate the first ability

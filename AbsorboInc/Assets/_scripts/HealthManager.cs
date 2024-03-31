@@ -16,16 +16,17 @@ public class HealthManager : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        for(int i = 0; i < playerStats.abilities.Length; i++)
-        {
-            if (playerStats.abilities[i] != null)
-            {
-                playerStats.abilities[i].DamageTook(gameObject,damage);
-            }
-           
-        }
         if(playerStats != null)
         {
+            for (int i = 0; i < playerStats.abilities.Length; i++)
+            {
+                if (playerStats.abilities[i] != null)
+                {
+                    playerStats.abilities[i].DamageTook(gameObject, damage);
+                }
+            }
+
+
             damageReduction = playerStats.currentDefense / 2;
 
             if (playerStats.currentHealth > 0)
