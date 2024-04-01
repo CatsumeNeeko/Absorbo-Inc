@@ -38,11 +38,13 @@ public class PlayerMovement : MonoBehaviour
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
                 string objectTag = hit.collider.tag;
-
+                //Debug.Log(objectTag);
+                Debug.Log(hit.collider.gameObject);
                 switch (objectTag)
                 {
                     case "Ground":
                         navMeshAgent.SetDestination(hit.point);
+                        Debug.Log(hit.point);
                         break;
                     case "Enemy":
                         AutoAttack(hit);

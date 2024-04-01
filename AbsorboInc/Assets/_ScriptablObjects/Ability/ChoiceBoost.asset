@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 078a9acc3403091428538130e11b9781, type: 3}
+  m_Name: ChoiceBoost
+  m_EditorClassIdentifier: 
+  name: Molted gel
+  isPassive: 1
+  cooldown: 2
+  baseSpeed: 5
+  bonusSpeed: 1.2
+  baseDamage: 15
+  bonusDamage: 1.2
+  switchDamageSpeed: 0
+  switchNoticed: 0

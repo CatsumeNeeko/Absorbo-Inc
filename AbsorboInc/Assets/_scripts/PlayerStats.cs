@@ -278,8 +278,9 @@ public class PlayerStats : MonoBehaviour
         {
             if (abilities[0].isPassive)
             {
-                ActivateFirstAbility(gameObject);
-                Debug.Log("Passive used" + abilities[0].name);
+                //ActivateFirstAbility(gameObject);
+                //Debug.Log("Passive used" + abilities[0].name);
+                //abilities[0].ActivatePassive(gameObject);
             }
         }
         if(abilities[1] != null)

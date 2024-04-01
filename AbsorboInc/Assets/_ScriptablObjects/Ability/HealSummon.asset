@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee0a4264e11d10a4fabf490d43e8c45b, type: 3}
+  m_Name: HealSummon
+  m_EditorClassIdentifier: 
+  name: drain
+  isPassive: 0
+  cooldown: 25
+  summonedObject: {fileID: 6901025363409467123, guid: 7cdf8983112f3034fa2d4af33b2490e7, type: 3}
+  summonLocation: {fileID: 0}
+  summonRange: 20

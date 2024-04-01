@@ -20,7 +20,7 @@ MonoBehaviour:
   baseMaxResoruce: 0
   baseResourceRegen: 0
   baseMovementSpeed: 5
-  baseMinimumMovementSpeed: 2
+  baseMinimumMovementSpeed: 5
   baseDefence: 1
   attackRange: 5
   baseAttackSpeed: 0
