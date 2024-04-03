@@ -27,7 +27,8 @@ public class GameUiMangaer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        //GameObject player = GameObject.FindGameObjectWithTag("Player");
+        //playerStats = player.GetComponent<PlayerStats>();
     }
 
     // Update is called once per frame

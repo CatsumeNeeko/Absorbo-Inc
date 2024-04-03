@@ -107,7 +107,7 @@ public class PlayerStats : MonoBehaviour
         }
 
     }
-
+    #region stomachFilledTwo
     void StomachFilledTwo(int value)
     {
         switch (value)
@@ -123,8 +123,31 @@ public class PlayerStats : MonoBehaviour
             case 3:
                 UpdateAbility(playerAbilityList.ID3_2);
                 break;
+            case 4:
+                UpdateAbility(playerAbilityList.ID4_2);
+                break;
+            case 5:
+                UpdateAbility(playerAbilityList.ID5_2);
+                break;
+            case 6:
+                UpdateAbility(playerAbilityList.ID6_2);
+                break;
+            case 7:
+                UpdateAbility(playerAbilityList.ID7_2);
+                break;
+            case 8:
+                UpdateAbility(playerAbilityList.ID8_2);
+                break;
+            case 9:
+                UpdateAbility(playerAbilityList.ID9_2);
+                break;
+            case 10:
+                UpdateAbility(playerAbilityList.ID10_2);
+                break;
         }
     }
+    #endregion
+    #region StomachFilledThree
     void StomachFilledThree(int value)
     {
         switch (value)
@@ -133,8 +156,37 @@ public class PlayerStats : MonoBehaviour
                 //Debug.Log("Stomach Filled Three" + value);
                 UpdateAbility(playerAbilityList.ID1_3);
                 break;
+            case 2:
+                UpdateAbility(playerAbilityList.ID2_3);
+                break;
+            case 3:
+                UpdateAbility(playerAbilityList.ID3_3);
+                break;
+            case 4:
+                UpdateAbility(playerAbilityList.ID4_3);
+                break;
+            case 5:
+                UpdateAbility(playerAbilityList.ID5_3);
+                break;
+            case 6:
+                UpdateAbility(playerAbilityList.ID6_3);
+                break;
+            case 7:
+                UpdateAbility(playerAbilityList.ID7_3);
+                break;
+            case 8:
+                UpdateAbility(playerAbilityList.ID8_3);
+                break;
+            case 9:
+                UpdateAbility(playerAbilityList.ID9_3);
+                break;
+            case 10:
+                UpdateAbility(playerAbilityList.ID10_3);
+                break;
         }
     }
+    #endregion
+    #region StomachFilledFive
     void StomachFilledFive(int value)
     {
         switch(value)
@@ -143,8 +195,45 @@ public class PlayerStats : MonoBehaviour
                 SetFirstAbility(playerAbilityList.ID1_2);
                 SetSecondAbility(playerAbilityList.ID1_3);
                 break;
+            case 2:
+                SetFirstAbility(playerAbilityList.ID2_2);
+                SetSecondAbility(playerAbilityList.ID2_3);
+                break;
+            case 3:
+                SetFirstAbility(playerAbilityList.ID3_2);
+                SetSecondAbility(playerAbilityList.ID3_3);
+                break;
+            case 4:
+                SetFirstAbility(playerAbilityList.ID4_2);
+                SetSecondAbility(playerAbilityList.ID4_3);
+                break;
+            case 5:
+                SetFirstAbility(playerAbilityList.ID5_2);
+                SetSecondAbility(playerAbilityList.ID5_3);
+                break;
+            case 6:
+                SetFirstAbility(playerAbilityList.ID6_2);
+                SetSecondAbility(playerAbilityList.ID6_3);
+                break;
+            case 7:
+                SetFirstAbility(playerAbilityList.ID7_2);
+                SetSecondAbility(playerAbilityList.ID7_3);
+                break;
+            case 8:
+                SetFirstAbility(playerAbilityList.ID8_2);
+                SetSecondAbility(playerAbilityList.ID8_3);
+                break;
+            case 9:
+                SetFirstAbility(playerAbilityList.ID9_2);
+                SetSecondAbility(playerAbilityList.ID9_3);
+                break;
+            case 10:
+                SetFirstAbility(playerAbilityList.ID10_2);
+                SetSecondAbility(playerAbilityList.ID10_3);
+                break;
         }
     }
+    #endregion
     #endregion
     #region AbilitySystem
     public void SetFirstAbility(AbilitySO newAbility)
@@ -193,6 +282,21 @@ public class PlayerStats : MonoBehaviour
                 if (abilities[i] == null)
                 {
                     abilities[i] = newAbility;
+                    if (i == 0)
+                    {
+                        canAbilityOne = true;
+                        abilityOneTimer = newAbility.cooldown;
+                    }
+                    else if (i == 1)
+                    {
+                        canAbilityTwo = true;
+                        abilityTwoTimer = newAbility.cooldown;
+                    }
+                    else if (i == 2)
+                    {
+                        canAbilityThree = true;
+                        abilityThreeTimer = newAbility.cooldown;
+                    }
                     break;
                 }
             }
