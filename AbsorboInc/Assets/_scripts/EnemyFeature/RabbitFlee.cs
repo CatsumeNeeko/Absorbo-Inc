@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using static UnityEngine.GraphicsBuffer;
 using static UnityEngine.RuleTile.TilingRuleOutput;
-[CreateAssetMenu(fileName ="Rabbit", menuName ="Enemy/Rabbit")]
+[CreateAssetMenu(fileName ="Rabbit", menuName ="EnemyFeature/Rabbit")]
 public class RabbitFlee : EnemiesSo
 {
     public bool hasFlee;
