@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee0a4264e11d10a4fabf490d43e8c45b, type: 3}
   m_Name: DamageOverTime
   m_EditorClassIdentifier: 
-  name: 
+  name: poison cloud
   isPassive: 0
-  cooldown: 0
-  summonedObject: {fileID: 0}
+  cooldown: 17
+  summonedObject: {fileID: 6686729152445259668, guid: c4cf9bbd91f2d304c929ed8dbd15963a, type: 3}
   summonLocation: {fileID: 0}
-  summonRange: 0
+  summonRange: 20

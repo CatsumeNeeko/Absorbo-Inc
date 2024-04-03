@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Last Stand
   m_EditorClassIdentifier: 
   name: Final Hour
-  isPassive: 1
+  isPassive: 0
   cooldown: 0
   healthThresholdPercentage: 0.3
   healthRefillAmount: 60

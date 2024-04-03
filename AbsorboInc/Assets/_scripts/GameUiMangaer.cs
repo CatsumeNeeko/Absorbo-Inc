@@ -24,7 +24,14 @@ public class GameUiMangaer : MonoBehaviour
     [Header("AbilityVaraibles")]
     //[SerializeField] Image[] AbilityList;
     [SerializeField] Image AbilityOne, AbilityTwo,AbilityThree,ConsumeAbility;
-    // Start is called before the first frame update
+    [Header("StomachVariables")]
+    [SerializeField] TMP_Text SlotZero;
+    [SerializeField] TMP_Text SlotOne;
+    [SerializeField] TMP_Text SlotTwo;
+    [SerializeField] TMP_Text SlotThree;
+    [SerializeField] TMP_Text SlotFour;
+
+
     void Start()
     {
         //GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -38,6 +45,7 @@ public class GameUiMangaer : MonoBehaviour
         HealthBarUI();
         ResourceBarUI();
         AbilityUi();
+        StomachUi();
     }
     public void StabilityUi()
     {
@@ -100,6 +108,29 @@ public class GameUiMangaer : MonoBehaviour
         else
         {
             AbilityThree.gameObject.SetActive(false);
+        }
+    }
+    public void StomachUi()
+    {
+        if (playerStats.stomachArray[0] != 0)
+        {
+            SlotZero.text ="Slot 1: "+ playerStats.stomachArray[0].ToString();
+        }
+        if (playerStats.stomachArray[1] != 0)
+        {
+            SlotOne.text ="Slot 2: "+ playerStats.stomachArray[1].ToString();
+        }
+        if (playerStats.stomachArray[2] != 0)
+        {
+            SlotTwo.text ="Slot 3: "+ playerStats.stomachArray[2].ToString();
+        }
+        if (playerStats.stomachArray[3] != 0)
+        {
+            SlotThree.text ="Slot 4: "+ playerStats.stomachArray[3].ToString();
+        }
+        if (playerStats.stomachArray[4] != 0)
+        {
+            SlotFour.text ="Slot 5: "+ playerStats.stomachArray[4].ToString();
         }
     }
 }

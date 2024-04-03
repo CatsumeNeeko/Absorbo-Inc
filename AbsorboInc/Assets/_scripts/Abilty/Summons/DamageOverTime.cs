@@ -5,15 +5,15 @@ using UnityEngine;
 
 public class DamageOverTime : MonoBehaviour
 {
-    [SerializeField] float detectionRange;
-    [SerializeField] float damagePerTik;
-    [SerializeField] float damageEvents = 0;
+    public float detectionRange;
+    public float damagePerTik;
+    public float damageEvents = 0;
 
-    [SerializeField] float despawnTime;
-    [SerializeField] float tickInterval;
-    [SerializeField] float despawnTimer;
-    [SerializeField] float poisionTimer;
-    [SerializeField] float timeBetweenPoision;
+    public float despawnTime;
+    public float tickInterval;
+    public float despawnTimer;
+    public float poisionTimer;
+    public float timeBetweenPoision;
 
     public void Update()
     {
