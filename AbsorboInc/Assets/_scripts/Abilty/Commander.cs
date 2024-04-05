@@ -20,13 +20,13 @@ public class Commander : AbilitySO
         {
             UnitInteraction(owner);
             GameObject.FindGameObjectWithTag("CommanderSummon").GetComponent<CommanderSummon>().selectedTarget = null;
-            Debug.Log("Unit Interaction");
+            //Debug.Log("Unit Interaction");
         }
         else
         {
             SpawnUnit(owner);
             //owner.GetComponent<MonoBehaviour>().StartCoroutine("ResetSpawn");
-            Debug.Log("Spawm Unit");
+            //Debug.Log("Spawm Unit");
         }
     }
     public void SpawnUnit(GameObject owner)
