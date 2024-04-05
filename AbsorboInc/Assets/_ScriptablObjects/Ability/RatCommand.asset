@@ -15,6 +15,8 @@ MonoBehaviour:
   name: rattt
   isPassive: 0
   cooldown: 0
+  hasRange: 1
+  abilityRange: 10
   summonedObject: {fileID: 8028813763818768434, guid: ee7259447b7745b479d1aa4c7260cc00, type: 3}
   summonLocation: {fileID: 0}
-  summonRange: 20
+  summonRange: 0

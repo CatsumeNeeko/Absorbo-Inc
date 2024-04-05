@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Take that back
   isPassive: 0
   cooldown: 0
+  hasRange: 0
+  abilityRange: 3
   baseDamage: 10
   reflectPercent: 0.5
-  detectionRange: 3

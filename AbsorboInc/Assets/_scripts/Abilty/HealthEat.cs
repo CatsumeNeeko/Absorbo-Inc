@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="Alt consume",menuName ="Ability/HealthConsume")]
 public class HealthEat : AbilitySO
 {
-    [SerializeField] float consumeRange;
+    //[SerializeField] float consumeRange;
     [SerializeField] LayerMask enemyLayer;
     [SerializeField] float healthGainBase;
     [SerializeField] float enemyPercentage;
@@ -13,7 +13,7 @@ public class HealthEat : AbilitySO
     {
         base.ActivateAbility(owner);
         Debug.Log("bite");
-        Collider[] colliders = Physics.OverlapSphere(owner.transform.position, consumeRange, enemyLayer);
+        Collider[] colliders = Physics.OverlapSphere(owner.transform.position, abilityRange, enemyLayer);
         foreach (Collider col in colliders)
         {
             Debug.Log("Bite" + colliders.Length);

@@ -17,8 +17,11 @@ public class PlayerMovement : MonoBehaviour
     [Header("Consume Info")]
     public float consumeRange = 5f;
     public LayerMask enemyLayer;
-
-
+    [Header("Ability Indicator Info")]
+    [SerializeField] GameObject abilityIndicator;
+    private float abilityIndicatorBase = 100;
+    private Vector3 originalScale;
+    private bool rc1 = false, rc2 = false, rc3 = false;
     private void Awake()
     {
         cam = Camera.main;
@@ -27,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
+        originalScale = abilityIndicator.transform.localScale;
     }
     private void Update()
     {
@@ -54,30 +58,90 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
-        //Might need to change this for visual clarity where on key down it will show the ability indicators and on get key up activate the ability
-        if (Input.GetKeyDown(KeyCode.E))
+        #region Ability Casting 
+
+        //Consume
+        if (Input.GetKeyUp(KeyCode.E))
         {
+            abilityIndicator.SetActive(false);
+            abilityIndicator.transform.localScale = originalScale;
             Consume();
             playerStats.ConsumeTimer();
         }
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            abilityIndicator.SetActive(true);
+            abilityIndicator.transform.localScale = new Vector3(abilityIndicatorBase * consumeRange,abilityIndicatorBase * consumeRange);
+        }
+
+
+
+        if (Input.GetKeyUp(KeyCode.Q))
         {
             //playerStats.AbilityOneTimer();
+            abilityIndicator.SetActive(false);
+            abilityIndicator.transform.localScale = originalScale;
             playerStats.ActivateFirstAbility(gameObject);
             playerStats.AbilityOneTimer();
+            rc1 = false;
+        }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            float scaleIncrease = playerStats.abilities[0].abilityRange;
+            if (playerStats.abilities[0].hasRange)
+            {
+                abilityIndicator.SetActive(true);
+                abilityIndicator.transform.localScale = new Vector3(abilityIndicatorBase * scaleIncrease, abilityIndicatorBase * scaleIncrease);
+                OnDrawGizmos();
+                rc1 = true;
+            }
+        }
+
+
+        if (Input.GetKeyUp(KeyCode.W))
+        {
+            abilityIndicator.SetActive(false);
+            abilityIndicator.transform.localScale = originalScale;
+            playerStats.ActivateSecondAbility(gameObject);
+            playerStats.AbilityTwoTimer();
+            rc2 = false;
         }
         if (Input.GetKeyDown(KeyCode.W))
         {
-            playerStats.ActivateSecondAbility(gameObject);
-            playerStats.AbilityTwoTimer();
+            float scaleIncrease = playerStats.abilities[1].abilityRange;
+            if (playerStats.abilities[1].hasRange)
+            {
+                abilityIndicator.SetActive(true);
+                abilityIndicator.transform.localScale = new Vector3(abilityIndicatorBase * scaleIncrease, abilityIndicatorBase * scaleIncrease);
+                OnDrawGizmos();
+                rc2 = true;
+            }
+        }
+
+
+        if (Input.GetKeyUp(KeyCode.R))
+        {
+            abilityIndicator.SetActive(false);
+            abilityIndicator.transform.localScale = originalScale;
+            playerStats.ActivateThirdAbility(gameObject);
+            playerStats.AbilityThreeTimer();
+            rc3 = false;
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
-            playerStats.ActivateThirdAbility(gameObject);
-            playerStats.AbilityThreeTimer();
+            float scaleIncrease = playerStats.abilities[2].abilityRange;
+            if (playerStats.abilities[2].hasRange)
+            {
+                abilityIndicator.SetActive(true);
+                abilityIndicator.transform.localScale = new Vector3(abilityIndicatorBase * scaleIncrease, abilityIndicatorBase * scaleIncrease);
+                OnDrawGizmos();
+                rc3 = true;
+            }
         }
+
+        #endregion
     }
-    
+
     public void AutoAttack(RaycastHit hit)
     {
         
@@ -105,6 +169,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Debug.Log("Consume Active");
         Collider[] colliders = Physics.OverlapSphere(transform.position, consumeRange, enemyLayer);
+        OnDrawGizmos();
         foreach (Collider col in colliders)
         {
             EnemyStats enemy = col.GetComponent<EnemyStats>();
@@ -158,6 +223,16 @@ public class PlayerMovement : MonoBehaviour
                 Destroy(col.gameObject);
             }
 
+        }
+    }
+    private void OnDrawGizmos()
+    {
+        //Gizmos.color = Color.cyan;
+        //Gizmos.DrawWireSphere(transform.position, consumeRange);
+        if (rc1)
+        {
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawWireSphere(transform.position, playerStats.abilities[0].abilityRange);
         }
     }
 }

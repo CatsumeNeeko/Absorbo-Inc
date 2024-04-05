@@ -9,6 +9,10 @@ public class AbilitySO : ScriptableObject
     public bool isPassive;
     public float cooldown;
 
+    [Header("Range Info")]
+    public bool hasRange;
+    public float abilityRange;
+
     public virtual void ActivateAbility(GameObject owner)
     {
 

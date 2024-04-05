@@ -15,7 +15,8 @@ MonoBehaviour:
   name: healing bite
   isPassive: 0
   cooldown: 5
-  consumeRange: 5
+  hasRange: 1
+  abilityRange: 5
   enemyLayer:
     serializedVersion: 2
     m_Bits: 8

@@ -15,6 +15,7 @@ MonoBehaviour:
   name: drain
   isPassive: 0
   cooldown: 25
+  hasRange: 1
+  abilityRange: 20
   summonedObject: {fileID: 6901025363409467123, guid: 7cdf8983112f3034fa2d4af33b2490e7, type: 3}
   summonLocation: {fileID: 0}
-  summonRange: 20

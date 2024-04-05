@@ -21975,7 +21975,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &471931481
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -34316,6 +34316,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 883664530488991081, guid: b93b46d6c2182d84182060baa5a2084a, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1292368921017260632, guid: b93b46d6c2182d84182060baa5a2084a, type: 3}
       propertyPath: cam
       value: 

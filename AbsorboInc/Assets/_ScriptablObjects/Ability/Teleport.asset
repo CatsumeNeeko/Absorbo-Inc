@@ -15,4 +15,5 @@ MonoBehaviour:
   name: TpoWo
   isPassive: 0
   cooldown: 5
-  teleportRange: 100
+  hasRange: 1
+  abilityRange: 100

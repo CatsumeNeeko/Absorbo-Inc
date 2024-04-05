@@ -7,14 +7,14 @@ public class Summon : AbilitySO
 {
     public GameObject summonedObject;
     public Transform summonLocation;
-    public float summonRange;
+    //public float summonRange;
     public override void ActivateAbility(GameObject owner)
     {
         base.ActivateAbility(owner);
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if(Physics.Raycast(ray, out hit, summonRange))
+        if(Physics.Raycast(ray, out hit, abilityRange))
         {
             NavMeshHit navHit;
             if (NavMesh.SamplePosition(hit.point, out navHit, 0.1f, NavMesh.AllAreas))

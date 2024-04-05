@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="Ray",menuName ="Ability/Ray")]
 public class RayAbility : AbilitySO
 {
-    public float abilityRange;
+    //public float abilityRange;
     public float abilityTotalDamage;
     public float abilityDamageReduction;
 

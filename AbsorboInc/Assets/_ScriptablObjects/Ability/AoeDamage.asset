@@ -15,6 +15,7 @@ MonoBehaviour:
   name: Hedgehog Spike
   isPassive: 0
   cooldown: 7
-  detectionRange: 5
+  hasRange: 1
+  abilityRange: 5
   percentageDamage: 20
   minDamage: 5

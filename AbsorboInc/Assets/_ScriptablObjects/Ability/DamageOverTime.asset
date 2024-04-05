@@ -15,6 +15,7 @@ MonoBehaviour:
   name: poison cloud
   isPassive: 0
   cooldown: 17
+  hasRange: 1
+  abilityRange: 10
   summonedObject: {fileID: 6686729152445259668, guid: c4cf9bbd91f2d304c929ed8dbd15963a, type: 3}
   summonLocation: {fileID: 0}
-  summonRange: 20

@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="AoeDamage",menuName ="Ability/AoeDamage")]
 public class AoeDamage : AbilitySO
 {
-    public float detectionRange;
+    //public float detectionRange;
     public float percentageDamage;
     public float minDamage;
 
@@ -13,7 +13,7 @@ public class AoeDamage : AbilitySO
     {
         base.ActivateAbility(owner);
 
-        Collider[] colliders = Physics.OverlapSphere(owner.transform.position, detectionRange);
+        Collider[] colliders = Physics.OverlapSphere(owner.transform.position, abilityRange);
         List<EnemyStats> enemies = new List<EnemyStats>();
         foreach (Collider collider in colliders)
         {

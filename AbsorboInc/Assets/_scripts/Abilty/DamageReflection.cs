@@ -6,12 +6,12 @@ public class DamageReflection : AbilitySO
 {
     public float baseDamage;
     public float reflectPercent;
-    public float detectionRange;
+    //public float detectionRange;
     public override void DamageTook(GameObject owner,float damage)
     {
         base.DamageTook(owner,damage);
 
-        Collider[] colliders = Physics.OverlapSphere(owner.transform.position, detectionRange);
+        Collider[] colliders = Physics.OverlapSphere(owner.transform.position, abilityRange);
         List<EnemyStats> enemies = new List<EnemyStats>();
         foreach (Collider collider in colliders)
         {

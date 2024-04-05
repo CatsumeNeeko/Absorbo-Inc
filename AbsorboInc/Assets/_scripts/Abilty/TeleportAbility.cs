@@ -5,13 +5,13 @@ using UnityEngine.AI;
 [CreateAssetMenu(fileName = "New Teleport Ability", menuName = "Ability/Teleport Ability")]
 public class TeleportAbility : AbilitySO
 {
-    public float teleportRange = 10f;
+    //public float teleportRange = 10f;
     
     public override void ActivateAbility(GameObject owner)
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, teleportRange))
+        if (Physics.Raycast(ray, out hit, abilityRange))
         {
             // Check if the hit object is on a NavMesh surface
             NavMeshHit navHit;
