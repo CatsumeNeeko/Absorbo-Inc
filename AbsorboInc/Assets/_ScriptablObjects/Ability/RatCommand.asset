@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c15f8e4e86c42347940640bc6456c18, type: 3}
-  m_Name: Commander
+  m_Name: RatCommand
   m_EditorClassIdentifier: 
-  name: ratata
+  name: rattt
   isPassive: 0
   cooldown: 0
   summonedObject: {fileID: 8028813763818768434, guid: ee7259447b7745b479d1aa4c7260cc00, type: 3}

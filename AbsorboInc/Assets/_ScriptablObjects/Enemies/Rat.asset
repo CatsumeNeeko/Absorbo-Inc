@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b888147e9cdb1324eae367fee7ef1a6c, type: 3}
   m_Name: Rat
   m_EditorClassIdentifier: 
-  name: 
+  name: Rat
   model: {fileID: 0}
-  enemyID: 0
+  enemyID: 7
   stabilityValue: 0
   stabilityChance: 0
   baseMaxHealth: 0
