@@ -16,6 +16,7 @@ public class EnemyMovement : MonoBehaviour
 
     [Header("ScriptInfo")]
     [SerializeField] bool isRanged;
+    [SerializeField] GameObject shootLocation;
     [SerializeField] float speed;
     private float lastAttackTime, distanceToTarget;
     private void Awake()
@@ -36,13 +37,25 @@ public class EnemyMovement : MonoBehaviour
         navMeshAgent.speed = enemies.currentMovementSpeed;
         if (enemies.isDead == false)
         {
-            navMeshAgent.SetDestination(target.position);
+            if (enemies.isRanged)
+            {
+                if (distanceToTarget > enemies.attackRange)
+                {
+                    navMeshAgent.SetDestination(target.position);
+                }
+                else
+                {
+                    navMeshAgent.ResetPath();
+                }
+            }
+
             if (Time.time - lastAttackTime >= enemies.attackCD)
             {
                 lastAttackTime = Time.time;
                 if (enemies.isRanged)
                 {
-                    RangedAttack();
+                    float bulletRandomness = Random.Range(0f, 1f);
+                    RangedAttack(bulletRandomness);
                 }
                 else
                 {
@@ -69,13 +82,19 @@ public class EnemyMovement : MonoBehaviour
             }
         }
     }
-    void RangedAttack()
+    void RangedAttack(float random)
     {
         //create projectile 
         transform.LookAt(target);
-        GameObject bullet = Instantiate(enemies.projectile, transform.position, Quaternion.identity);
-        Vector3 direction = (target.position - transform.position).normalized;
-        bullet.GetComponent<Rigidbody>().velocity = direction * enemies.projectileSpeed;
 
+        Vector3 targetPosition = target.position + Random.insideUnitSphere * random;
+        Vector3 direction = (targetPosition - transform.position).normalized;
+        
+        GameObject bullet = Instantiate(enemies.projectile, shootLocation.transform.position, Quaternion.identity);
+        Rigidbody rigidbody = bullet.GetComponent<Rigidbody>();
+        rigidbody.velocity = direction * enemies.projectileSpeed;
+
+        EnemyBullets enemyBullets = bullet.GetComponent<EnemyBullets>();
+        enemyBullets.damage = enemies.damage;
     }
 }

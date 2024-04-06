@@ -12,23 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b888147e9cdb1324eae367fee7ef1a6c, type: 3}
   m_Name: Snake
   m_EditorClassIdentifier: 
-  name: 
+  name: Snake
   model: {fileID: 0}
-  enemyID: 0
+  enemyID: 4
   stabilityValue: 0
   stabilityChance: 0
-  baseMaxHealth: 0
-  damage: 0
-  defPenetration: 0
-  baseMovementSpeed: 0
-  baseMinimumMovementSpeed: 0
-  baseDefence: 0
-  attackRange: 0
-  attackCooldown: 0
+  baseMaxHealth: 60
+  damage: 20
+  defPenetration: 2
+  baseMovementSpeed: 2.6
+  baseMinimumMovementSpeed: 1
+  baseDefence: 1
+  attackRange: 10
+  attackCooldown: 6
   selfHeal: 0
   healthStates: 0
   colourStates: []
-  isRanged: 0
-  projectile: {fileID: 0}
-  baseProjectileSpeed: 0
+  isRanged: 1
+  projectile: {fileID: 7990404126953714990, guid: 56ae165017a149b4cbb2fceba3617594, type: 3}
+  baseProjectileSpeed: 3
   hasFeatures: 0

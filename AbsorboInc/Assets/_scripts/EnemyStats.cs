@@ -24,8 +24,11 @@ public class EnemyStats : MonoBehaviour
     public bool canHeal;
     public bool isDead;
     public int enemyID;
+
+    [Header("RangedInfo")]
     public bool isRanged;
     public GameObject projectile;
+
     public float projectileSpeed;
     [Header("Visual Info")]
     public Material[] colourStates;
