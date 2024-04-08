@@ -18,7 +18,8 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] bool isRanged;
     [SerializeField] GameObject shootLocation;
     [SerializeField] float speed;
-    private float lastAttackTime, distanceToTarget;
+    private float lastAttackTime;
+    public float distanceToTarget;
     private void Awake()
     {
         enemies = GetComponent<EnemyStats>();
@@ -37,6 +38,8 @@ public class EnemyMovement : MonoBehaviour
         navMeshAgent.speed = enemies.currentMovementSpeed;
         if (enemies.isDead == false)
         {
+            distanceToTarget = Vector3.Distance(transform.position, target.position);
+
             if (enemies.isRanged)
             {
                 if (distanceToTarget > enemies.attackRange)
@@ -48,7 +51,13 @@ public class EnemyMovement : MonoBehaviour
                     navMeshAgent.ResetPath();
                 }
             }
-
+            else
+            {
+                if (distanceToTarget > enemies.attackRange)
+                {
+                    navMeshAgent.SetDestination(target.position);
+                }
+            }
             if (Time.time - lastAttackTime >= enemies.attackCD)
             {
                 lastAttackTime = Time.time;

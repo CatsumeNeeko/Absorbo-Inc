@@ -89,23 +89,19 @@ public class PlayerStats : MonoBehaviour
             {
                 if (valueCount[i] == 2)
                 {
-                    //Debug.Log("Two occurrences of value " + i);
                     StomachFilledTwo(i);
                 }
                 else if (valueCount[i] == 3)
                 {
-                    //Debug.Log("Three occurrences of value " + i);
                     StomachFilledThree(i);
                 }
                 else if (valueCount[i] == 5 && i != 0)
                 {
-                    //Debug.Log("Gene Mixed Complete");
                     lockStomach = true;
                     StomachFilledFive(i);
                 }
             }
         }
-
     }
     #region stomachFilledTwo
     void StomachFilledTwo(int value)

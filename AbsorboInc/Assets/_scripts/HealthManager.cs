@@ -45,11 +45,11 @@ public class HealthManager : MonoBehaviour
             if(enemyStats.currentHealth > 0)
             {
                 enemyStats.currentHealth -= damage / damageReduction;
-                UpdateMaterial();
                 if(enemyStats.currentHealth <= 0)
                 {
                     Die();
                 }
+                UpdateMaterial();
             }
         }
     }
