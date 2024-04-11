@@ -60,7 +60,7 @@ public class EnemyStats : MonoBehaviour
             projectileSpeed = enemyStats.baseProjectileSpeed;
         }
         colourStates = enemyStats.colourStates;
-        renderer = transform.GetChild(0).GetComponent<Renderer>();
+        renderer = transform.GetChild(0).GetChild(0).GetComponent<Renderer>();
         stabilityValue = enemyStats.stabilityValue;
         stabilityChance = enemyStats.stabilityChance;
     }

@@ -15,12 +15,12 @@ MonoBehaviour:
   name: Blob
   model: {fileID: 0}
   baseMaxHealth: 100
-  baseHealthRegen: 2
+  baseHealthRegen: 0.5
   resourceType: 0
   baseMaxResoruce: 0
   baseResourceRegen: 0
   baseMovementSpeed: 5
-  baseMinimumMovementSpeed: 5
+  baseMinimumMovementSpeed: 2.5
   baseDefence: 1
   attackRange: 5
   baseAttackSpeed: 0

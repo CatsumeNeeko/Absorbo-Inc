@@ -8,9 +8,16 @@ public class GameManager : MonoBehaviour
     public float stabilityPercentage;
     private float maximumTime = 150f;
 
+
+    public float escapeTimer;
+    public float maxEscapeTimer = 300f;
+    private bool canEscape;
+
+
     private void Start()
     {
         stabilityTimer = maximumTime;
+        escapeTimer = maxEscapeTimer;
     }
     public void Update()
     {
@@ -18,6 +25,7 @@ public class GameManager : MonoBehaviour
     }
     public void Timer()
     {
+        //
         stabilityTimer -= Time.deltaTime;
         stabilityPercentage = (stabilityTimer / maximumTime) * 100;
         if(stabilityTimer <= 0f)
@@ -25,7 +33,12 @@ public class GameManager : MonoBehaviour
             Debug.Log("Time out");
             GameOver();
         }
-
+        //
+        escapeTimer -= Time.deltaTime;
+        if(escapeTimer <= 0f && canEscape)
+        {
+            EscapeBegin();
+        }
     }
     public void IncreaseTimer(float time)
     {
@@ -34,6 +47,10 @@ public class GameManager : MonoBehaviour
         {
             stabilityTimer = maximumTime;
         }
+    }
+    public void EscapeBegin()
+    {
+
     }
     public void GameOver()
     {

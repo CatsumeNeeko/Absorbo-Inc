@@ -36,39 +36,45 @@ public class EnemyMovement : MonoBehaviour
     private void Update()
     {
         navMeshAgent.speed = enemies.currentMovementSpeed;
-        if (enemies.isDead == false)
+        if (target)
         {
-            distanceToTarget = Vector3.Distance(transform.position, target.position);
+            if (enemies.isDead == false)
+            {
+                distanceToTarget = Vector3.Distance(transform.position, target.position);
 
-            if (enemies.isRanged)
-            {
-                if (distanceToTarget > enemies.attackRange)
-                {
-                    navMeshAgent.SetDestination(target.position);
-                }
-                else
-                {
-                    navMeshAgent.ResetPath();
-                }
-            }
-            else
-            {
-                if (distanceToTarget > enemies.attackRange)
-                {
-                    navMeshAgent.SetDestination(target.position);
-                }
-            }
-            if (Time.time - lastAttackTime >= enemies.attackCD)
-            {
-                lastAttackTime = Time.time;
                 if (enemies.isRanged)
                 {
-                    float bulletRandomness = Random.Range(0f, 1f);
-                    RangedAttack(bulletRandomness);
+                    if (distanceToTarget > enemies.attackRange)
+                    {
+                        navMeshAgent.SetDestination(target.position);
+                    }
+                    else
+                    {
+                        navMeshAgent.ResetPath();
+                    }
                 }
                 else
                 {
-                    MeleeAttack();
+                    if (distanceToTarget > enemies.attackRange)
+                    {
+                        navMeshAgent.SetDestination(target.position);
+                    }
+                }
+                if (Time.time - lastAttackTime >= enemies.attackCD)
+                {
+                    lastAttackTime = Time.time;
+                    
+                    if (enemies.isRanged)
+                    {
+                        float bulletRandomness = Random.Range(0f, 1f);
+                        RangedAttack(bulletRandomness);
+                        Debug.Log("Do this");
+                    }
+                    else
+                    {
+                        MeleeAttack();
+                        Debug.Log("Do that");
+                    }
                 }
             }
         }
@@ -77,7 +83,18 @@ public class EnemyMovement : MonoBehaviour
             GetComponent<NavMeshAgent>().enabled = false;
         }
     }
-
+    private void FixedUpdate()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            target = player.transform;
+        }
+        else
+        {
+            target = null;
+        }
+    }
     void MeleeAttack()
     {
         distanceToTarget = Vector3.Distance(transform.position, target.position);
@@ -87,8 +104,12 @@ public class EnemyMovement : MonoBehaviour
             if(healthManager != null)
             {
                 healthManager.TakeDamage(enemies.damage);
-
             }
+        }
+        else
+        {
+            //This is used to let me know if the model size is preventing the melee auto attack
+            Debug.Log(distanceToTarget + " < " + enemies.attackRange); 
         }
     }
     void RangedAttack(float random)

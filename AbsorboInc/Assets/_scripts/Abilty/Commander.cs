@@ -7,7 +7,7 @@ public class Commander : AbilitySO
 {
     public GameObject summonedObject;
     public Transform summonLocation;
-    public float summonRange;
+    //public float summonRange;
 
     //public bool unitSummoned = false;
     //public GameObject unitObject = null;
@@ -34,7 +34,7 @@ public class Commander : AbilitySO
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit, summonRange))
+        if (Physics.Raycast(ray, out hit, abilityRange))
         {
             Debug.Log(hit);
             NavMeshHit navHit;

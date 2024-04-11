@@ -8,14 +8,21 @@ public class HealthManager : MonoBehaviour
     public PlayerStats playerStats;
     public EnemyStats enemyStats;
     public EnemyMovement enemyMovement;
+    public FakePlayer fakePlayer;
     [Header("Info")]
     [SerializeField] float damageReduction;
+    [SerializeField] bool isfakePlayer;
 
 
 
 
     public void TakeDamage(float damage)
     {
+        if(isfakePlayer)
+        {
+            fakePlayer.hitCount++;
+            Debug.Log("Hit increase");
+        }
         if(playerStats != null)
         {
             for (int i = 0; i < playerStats.abilities.Length; i++)
@@ -38,7 +45,7 @@ public class HealthManager : MonoBehaviour
                 }
             }
         }
-        else
+        else 
         {
             damageReduction = enemyStats.currentDefense / 2;
             

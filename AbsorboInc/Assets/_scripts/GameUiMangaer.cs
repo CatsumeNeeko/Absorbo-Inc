@@ -30,6 +30,8 @@ public class GameUiMangaer : MonoBehaviour
     [SerializeField] TMP_Text SlotTwo;
     [SerializeField] TMP_Text SlotThree;
     [SerializeField] TMP_Text SlotFour;
+    [Header("ElevatorVariables")]
+    [SerializeField] TMP_Text ElevatorText;
 
 
     void Start()
@@ -46,6 +48,7 @@ public class GameUiMangaer : MonoBehaviour
         ResourceBarUI();
         AbilityUi();
         StomachUi();
+        ElevatorUi();
     }
     public void StabilityUi()
     {
@@ -132,5 +135,12 @@ public class GameUiMangaer : MonoBehaviour
         {
             SlotFour.text ="Slot 5: "+ playerStats.stomachArray[4].ToString();
         }
+    }
+    public void ElevatorUi()
+    {
+        int minutes = Mathf.FloorToInt(gameManager.escapeTimer / 60f);
+        int seconds = Mathf.FloorToInt(gameManager.escapeTimer % 60f);
+
+        ElevatorText.text = minutes.ToString("00") + " : " + seconds.ToString("00");
     }
 }

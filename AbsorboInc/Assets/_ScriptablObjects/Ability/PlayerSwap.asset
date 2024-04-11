@@ -9,13 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c15f8e4e86c42347940640bc6456c18, type: 3}
-  m_Name: RatCommand
+  m_Script: {fileID: 11500000, guid: fc48b3911a2617f4a9486747afab3e3f, type: 3}
+  m_Name: PlayerSwap
   m_EditorClassIdentifier: 
-  name: rattt
+  name: 
   isPassive: 0
-  cooldown: 0
+  cooldown: 60
   hasRange: 1
   abilityRange: 20
-  summonedObject: {fileID: 8028813763818768434, guid: ee7259447b7745b479d1aa4c7260cc00, type: 3}
-  summonLocation: {fileID: 0}
+  fakePrefab: {fileID: 6271202530088040513, guid: 77e192e6b46befc4abacc5ffcecb3f56, type: 3}
+  goundTag: Ground
