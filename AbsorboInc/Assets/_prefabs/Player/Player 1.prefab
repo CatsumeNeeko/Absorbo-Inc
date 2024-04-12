@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerCharacterStats: {fileID: 11400000, guid: 87d1f48083cc1bc41badae0dbb29d6b0, type: 2}
-  playerAbilityList: {fileID: 0}
+  playerAbilityList: {fileID: 3553890196362548506}
   abilities: []
   currentHealth: 0
   maxHealth: 0
