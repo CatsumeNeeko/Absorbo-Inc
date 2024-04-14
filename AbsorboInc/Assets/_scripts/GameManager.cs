@@ -1,19 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
+    [Header("Stability")]
     public float stabilityTimer;
     public float stabilityPercentage;
     private float maximumTime = 150f;
 
-
+    [Header("Escape")]
     public float escapeTimer;
     public float maxEscapeTimer = 300f;
     private bool canEscape;
 
-
+    [Header("SceneTransition")]
+    [SerializeField] string gameOverScene= "GameOver";
     private void Start()
     {
         stabilityTimer = maximumTime;
@@ -55,5 +57,6 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         Debug.Log("Game is over!");
+        SceneManager.LoadScene(gameOverScene);
     }
 }

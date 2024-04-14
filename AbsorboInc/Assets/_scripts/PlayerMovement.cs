@@ -37,17 +37,14 @@ public class PlayerMovement : MonoBehaviour
         navMeshAgent.speed = playerStats.currentMovementSpeed;
         if (Input.GetMouseButton(1) || Input.GetMouseButtonDown(1))
         {
-            //Debug.Log("Rightclick pressed");
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit))
             {
                 string objectTag = hit.collider.tag;
-                //Debug.Log(hit.collider.gameObject);
                 switch (objectTag)
                 {
                     case "Ground":
                         navMeshAgent.SetDestination(hit.point);
-                        //Debug.Log(hit.point);
                         break;
                     case "Enemy":
                         AutoAttack(hit);
@@ -155,8 +152,6 @@ public class PlayerMovement : MonoBehaviour
                 playerAutoBullet.SetTarget(hit.transform);
             }
         }
-
-
     }
     /// <summary>
     /// Idea one: Uses a box collider around the player and will check if any of the enemies around are dead if they are it will get the id of the enemy and add that ID to the first empty array slot in player stats. 
@@ -206,20 +201,6 @@ public class PlayerMovement : MonoBehaviour
                     }
                 }
                 manager.IncreaseTimer(enemy.stabilityValue);
-
-
-                ////Random chance to increase stability
-                //float stabilityChanceValue = Random.Range(0.0f, 1.0f);
-                //if (stabilityChanceValue < enemy.stabilityChance)
-                //{
-                //    Debug.Log(stabilityChanceValue + " < " + enemy.stabilityChance + " success");
-                //    GameManager gameManager = GetComponent<GameManager>();
-                //    gameManager.stabilityTimer += enemy.stabilityValue;
-                //}
-                //else
-                //    Debug.Log(stabilityChanceValue + " < " + enemy.stabilityChance + " fail");
-
-
                 Destroy(col.gameObject);
             }
 
