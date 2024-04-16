@@ -8,7 +8,8 @@ public class PlayerStats : MonoBehaviour
     [Header("Dependancies")]
     public PlayerCharacterStatsSo playerCharacterStats;
     public PlayerAbilityList playerAbilityList;
-    public AbilitySO[] abilities; 
+    public AbilitySO[] abilities;
+    public GameManager gameManager;
     [Header("Health Related Stats")]
     public float currentHealth;
     public float maxHealth;
@@ -72,6 +73,7 @@ public class PlayerStats : MonoBehaviour
         StomachSearch();
         PassiveCheck();
         //UpdateAbiltyCoolDowns();
+        DeadCheck();
     }
     #region Stomach
     public void StomachSearch()
@@ -406,6 +408,13 @@ public class PlayerStats : MonoBehaviour
 
 
     #endregion
+    private void DeadCheck()
+    {
+        if(currentHealth <= 0f)
+        {
+            gameManager.GameOver();
+        }
+    }
     #region Timers
     /// <summary>
     /// The section below are used for timers 

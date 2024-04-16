@@ -12,22 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b888147e9cdb1324eae367fee7ef1a6c, type: 3}
   m_Name: Fox
   m_EditorClassIdentifier: 
-  name: 
+  name: Fox
   model: {fileID: 0}
-  enemyID: 0
-  stabilityValue: 0
-  stabilityChance: 0
-  baseMaxHealth: 0
-  damage: 0
-  defPenetration: 0
-  baseMovementSpeed: 0
-  baseMinimumMovementSpeed: 0
-  baseDefence: 0
-  attackRange: 0
-  attackCooldown: 0
+  enemyID: 10
+  stabilityValue: 7
+  stabilityChance: 100
+  baseMaxHealth: 150
+  damage: 20
+  defPenetration: 1
+  baseMovementSpeed: 3
+  baseMinimumMovementSpeed: 3
+  baseDefence: 1
+  attackRange: 4
+  attackCooldown: 6
   selfHeal: 0
-  healthStates: 0
-  colourStates: []
+  healthStates: 4
+  colourStates:
+  - {fileID: 2100000, guid: 18cae35134086bb47a32ce183c01e121, type: 2}
+  - {fileID: 2100000, guid: 5adccf3685a5f8e4fa06915363671f15, type: 2}
+  - {fileID: 2100000, guid: a142cb7767281fb4fa9a0e2c5e03c523, type: 2}
+  - {fileID: 2100000, guid: f2ae3cfb93864fb458f680a40fe669ff, type: 2}
   isRanged: 0
   projectile: {fileID: 0}
   baseProjectileSpeed: 0

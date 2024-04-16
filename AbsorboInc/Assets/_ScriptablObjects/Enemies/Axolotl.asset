@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b888147e9cdb1324eae367fee7ef1a6c, type: 3}
   m_Name: Axolotl
   m_EditorClassIdentifier: 
-  name: 
+  name: Axolotl
   model: {fileID: 0}
-  enemyID: 0
+  enemyID: 5
   stabilityValue: 0
   stabilityChance: 0
   baseMaxHealth: 0

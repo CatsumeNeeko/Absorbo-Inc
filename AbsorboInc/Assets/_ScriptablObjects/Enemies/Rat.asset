@@ -15,19 +15,23 @@ MonoBehaviour:
   name: Rat
   model: {fileID: 0}
   enemyID: 7
-  stabilityValue: 0
+  stabilityValue: 3
   stabilityChance: 0
-  baseMaxHealth: 0
-  damage: 0
+  baseMaxHealth: 25
+  damage: 7
   defPenetration: 0
-  baseMovementSpeed: 0
-  baseMinimumMovementSpeed: 0
-  baseDefence: 0
-  attackRange: 0
-  attackCooldown: 0
+  baseMovementSpeed: 4
+  baseMinimumMovementSpeed: 4
+  baseDefence: 1
+  attackRange: 1.5
+  attackCooldown: 0.5
   selfHeal: 0
   healthStates: 0
-  colourStates: []
+  colourStates:
+  - {fileID: 2100000, guid: c01e16c6552c58b408f61a5f3bd34d10, type: 2}
+  - {fileID: 2100000, guid: 99782b2dc439e024b8d52793a61481ea, type: 2}
+  - {fileID: 2100000, guid: e80953e635763b84cb2c9e828ed62d42, type: 2}
+  - {fileID: 2100000, guid: f5cd5712cb387a74bb9dd056bb7e2aa2, type: 2}
   isRanged: 0
   projectile: {fileID: 0}
   baseProjectileSpeed: 0

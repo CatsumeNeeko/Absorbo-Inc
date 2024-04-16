@@ -10,12 +10,15 @@ public class GameManager : MonoBehaviour
     private float maximumTime = 150f;
 
     [Header("Escape")]
+    [SerializeField] GameObject elevator;
+    [SerializeField] GameObject elevatorText;
     public float escapeTimer;
     public float maxEscapeTimer = 300f;
     private bool canEscape;
 
+
     [Header("SceneTransition")]
-    [SerializeField] string gameOverScene= "GameOver";
+    [SerializeField] string gameOverScene;
     private void Start()
     {
         stabilityTimer = maximumTime;
@@ -37,9 +40,10 @@ public class GameManager : MonoBehaviour
         }
         //
         escapeTimer -= Time.deltaTime;
-        if(escapeTimer <= 0f && canEscape)
+        if(escapeTimer <= 0f)
         {
             EscapeBegin();
+            //Debug.Log("Escape Has begun");
         }
     }
     public void IncreaseTimer(float time)
@@ -52,7 +56,8 @@ public class GameManager : MonoBehaviour
     }
     public void EscapeBegin()
     {
-
+        Destroy(elevator);
+        elevatorText.SetActive(false);
     }
     public void GameOver()
     {

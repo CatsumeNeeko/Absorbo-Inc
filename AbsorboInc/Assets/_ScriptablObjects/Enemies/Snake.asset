@@ -27,7 +27,11 @@ MonoBehaviour:
   attackCooldown: 6
   selfHeal: 0
   healthStates: 0
-  colourStates: []
+  colourStates:
+  - {fileID: 2100000, guid: 28cdea932fac76640b82d02372ee6f59, type: 2}
+  - {fileID: 2100000, guid: 40dcb670e595c4046828b80cc43b8e38, type: 2}
+  - {fileID: 2100000, guid: 50b8e36f613f6d84a9d5296de0e81b70, type: 2}
+  - {fileID: 2100000, guid: 26db70a5d3d9b6442960f5a78f87fa24, type: 2}
   isRanged: 1
   projectile: {fileID: 7990404126953714990, guid: 56ae165017a149b4cbb2fceba3617594, type: 3}
   baseProjectileSpeed: 3

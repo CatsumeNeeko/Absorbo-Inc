@@ -12,23 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b888147e9cdb1324eae367fee7ef1a6c, type: 3}
   m_Name: HedgeHog
   m_EditorClassIdentifier: 
-  name: 
+  name: HedgeHog
   model: {fileID: 0}
-  enemyID: 0
-  stabilityValue: 0
+  enemyID: 3
+  stabilityValue: 4
   stabilityChance: 0
-  baseMaxHealth: 0
-  damage: 0
+  baseMaxHealth: 50
+  damage: 25
   defPenetration: 0
-  baseMovementSpeed: 0
-  baseMinimumMovementSpeed: 0
-  baseDefence: 0
-  attackRange: 0
-  attackCooldown: 0
+  baseMovementSpeed: 1
+  baseMinimumMovementSpeed: 1
+  baseDefence: 4
+  attackRange: 3
+  attackCooldown: 8
   selfHeal: 0
   healthStates: 0
   colourStates: []
-  isRanged: 0
-  projectile: {fileID: 0}
-  baseProjectileSpeed: 0
+  isRanged: 1
+  projectile: {fileID: 7990404126953714990, guid: 56ae165017a149b4cbb2fceba3617594, type: 3}
+  baseProjectileSpeed: 8
   hasFeatures: 0
