@@ -24,6 +24,7 @@ public class GameUiMangaer : MonoBehaviour
     [Header("AbilityVaraibles")]
     //[SerializeField] Image[] AbilityList;
     [SerializeField] Image AbilityOne, AbilityTwo,AbilityThree,ConsumeAbility;
+    [SerializeField] TMP_Text AbilityOneTxt, AbilityTwoTxt, AbilityThreeTxt;
     [Header("StomachVariables")]
     [SerializeField] TMP_Text SlotZero;
     [SerializeField] TMP_Text SlotOne;
@@ -112,6 +113,28 @@ public class GameUiMangaer : MonoBehaviour
         {
             AbilityThree.gameObject.SetActive(false);
         }
+
+
+
+        if (playerStats.abilities[0] != null)
+        {
+            AbilityOneTxt.text = playerStats.abilities[0].name;
+        }
+        else
+            AbilityOneTxt.text = "";
+
+        if (playerStats.abilities[1] != null)
+        {
+            AbilityTwoTxt.text = playerStats.abilities[1].name;
+        }
+        else
+            AbilityTwoTxt.text = "";
+        if (playerStats.abilities[2] != null)
+        {
+            AbilityThreeTxt.text = playerStats.abilities[2].name;
+        }
+        else
+            AbilityThreeTxt.text = "";
     }
     public void StomachUi()
     {
