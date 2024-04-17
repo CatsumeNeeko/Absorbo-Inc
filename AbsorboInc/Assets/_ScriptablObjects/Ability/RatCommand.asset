@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c15f8e4e86c42347940640bc6456c18, type: 3}
   m_Name: RatCommand
   m_EditorClassIdentifier: 
-  name: rattt
+  name: Command
   isPassive: 0
   cooldown: 0
   hasRange: 1

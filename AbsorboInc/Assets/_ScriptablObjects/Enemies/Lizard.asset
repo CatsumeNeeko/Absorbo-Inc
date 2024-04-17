@@ -12,22 +12,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b888147e9cdb1324eae367fee7ef1a6c, type: 3}
   m_Name: Lizard
   m_EditorClassIdentifier: 
-  name: 
+  name: Lizard
   model: {fileID: 0}
   enemyID: 6
-  stabilityValue: 0
+  stabilityValue: 3
   stabilityChance: 0
-  baseMaxHealth: 0
-  damage: 0
-  defPenetration: 0
-  baseMovementSpeed: 0
-  baseMinimumMovementSpeed: 0
-  baseDefence: 0
-  attackRange: 0
-  attackCooldown: 0
+  baseMaxHealth: 50
+  damage: 3
+  defPenetration: 1
+  baseMovementSpeed: 4
+  baseMinimumMovementSpeed: 2
+  baseDefence: 1
+  attackRange: 3
+  attackCooldown: 6
   selfHeal: 0
   healthStates: 0
-  colourStates: []
+  colourStates:
+  - {fileID: 2100000, guid: 39fd7706378f7ad498995b1ca6d84867, type: 2}
+  - {fileID: 2100000, guid: 86b0c9f376590c547a9b2bdbfc18d717, type: 2}
+  - {fileID: 2100000, guid: e8826cb77a8bcb7429bce216013e50f2, type: 2}
+  - {fileID: 2100000, guid: d23946ea6870f9a4a99a714f9aab6530, type: 2}
   isRanged: 0
   projectile: {fileID: 0}
   baseProjectileSpeed: 0

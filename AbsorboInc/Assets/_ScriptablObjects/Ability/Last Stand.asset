@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7955745c60927b040b469f78e6bde073, type: 3}
   m_Name: Last Stand
   m_EditorClassIdentifier: 
-  name: Final Hour
+  name: Rebirth
   isPassive: 0
   cooldown: 0
+  hasRange: 0
+  abilityRange: 0
   healthThresholdPercentage: 0.3
   healthRefillAmount: 60
   lastStandUsed: 1

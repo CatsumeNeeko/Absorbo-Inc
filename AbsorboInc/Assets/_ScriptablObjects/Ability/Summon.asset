@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee0a4264e11d10a4fabf490d43e8c45b, type: 3}
   m_Name: Summon
   m_EditorClassIdentifier: 
-  name: Fight For Me!!
+  name: Tail Summon
   isPassive: 0
   cooldown: 20
   hasRange: 1

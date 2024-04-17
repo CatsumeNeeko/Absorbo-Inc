@@ -15,19 +15,23 @@ MonoBehaviour:
   name: Axolotl
   model: {fileID: 0}
   enemyID: 5
-  stabilityValue: 0
+  stabilityValue: 8
   stabilityChance: 0
-  baseMaxHealth: 0
-  damage: 0
+  baseMaxHealth: 125
+  damage: 7
   defPenetration: 0
-  baseMovementSpeed: 0
-  baseMinimumMovementSpeed: 0
-  baseDefence: 0
-  attackRange: 0
-  attackCooldown: 0
+  baseMovementSpeed: 3
+  baseMinimumMovementSpeed: 3
+  baseDefence: 1
+  attackRange: 1.5
+  attackCooldown: 3
   selfHeal: 0
   healthStates: 0
-  colourStates: []
+  colourStates:
+  - {fileID: 2100000, guid: a216e3b2a7c3a3145a8775f022e8104e, type: 2}
+  - {fileID: 2100000, guid: 583d2aa3766ad0243a175c4fb00109a7, type: 2}
+  - {fileID: 2100000, guid: 744a3fd3cf90aa14cbc47a27441a4900, type: 2}
+  - {fileID: 2100000, guid: 1afa6db2ab9501c459357699e0c3c421, type: 2}
   isRanged: 0
   projectile: {fileID: 0}
   baseProjectileSpeed: 0

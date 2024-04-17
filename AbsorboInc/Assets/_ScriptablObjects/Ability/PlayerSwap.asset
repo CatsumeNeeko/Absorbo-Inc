@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc48b3911a2617f4a9486747afab3e3f, type: 3}
   m_Name: PlayerSwap
   m_EditorClassIdentifier: 
-  name: 
+  name: Camouflage
   isPassive: 0
   cooldown: 60
   hasRange: 1
