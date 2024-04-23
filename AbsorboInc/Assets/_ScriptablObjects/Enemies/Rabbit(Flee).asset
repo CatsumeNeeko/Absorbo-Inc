@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e1073312bccff9449647b02a7d565e9, type: 3}
+  m_Name: Rabbit(Flee)
+  m_EditorClassIdentifier: 
+  name: Rabbit
+  model: {fileID: 0}
+  enemyID: 3
+  stabilityValue: 2
+  stabilityChance: 100
+  baseMaxHealth: 100
+  damage: 5
+  defPenetration: 2
+  baseMovementSpeed: 3.2
+  baseMinimumMovementSpeed: 1
+  baseDefence: 1
+  attackRange: 1.3
+  attackCooldown: 1
+  selfHeal: 0
+  healthStates: 4
+  colourStates:
+  - {fileID: 2100000, guid: 01c2b8979907b5b4786c3b360c28f9dd, type: 2}
+  - {fileID: 2100000, guid: 6261b28186c53d64ba35da855bfbe035, type: 2}
+  - {fileID: 2100000, guid: cd984f3b9b8b7714eaa712e283a60417, type: 2}
+  - {fileID: 2100000, guid: b021f452f5278b34f937fe872dd00f39, type: 2}
+  isRanged: 0
+  projectile: {fileID: 0}
+  baseProjectileSpeed: 0
+  hasFeatures: 1
+  hasFlee: 0
+  fleeThreshold: 0.2
+  saveLoc: 1

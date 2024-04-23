@@ -17,11 +17,11 @@ MonoBehaviour:
   enemyID: 7
   stabilityValue: 3
   stabilityChance: 0
-  baseMaxHealth: 25
-  damage: 7
-  defPenetration: 0
+  baseMaxHealth: 30
+  damage: 6
+  defPenetration: 1
   baseMovementSpeed: 4
-  baseMinimumMovementSpeed: 4
+  baseMinimumMovementSpeed: 3
   baseDefence: 1
   attackRange: 1.5
   attackCooldown: 0.5

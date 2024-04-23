@@ -19,3 +19,4 @@ MonoBehaviour:
   abilityRange: 5
   percentageDamage: 20
   minDamage: 5
+  particle: {fileID: 551231448649125683, guid: 97a74014cd207a24eb3b25410552e161, type: 3}

@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b96797e9ba061ad4aa7f14cfe2dbc983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyStats: {fileID: 11400000, guid: e845cce64e5bb9f41835d7117a55ade2, type: 2}
+  enemyStats: {fileID: 11400000, guid: c8e3ed0f6bb183e4eba5815a277e03df, type: 2}
   currentHealth: 0
   maxHealth: 0
   currentDefense: 0
@@ -127,7 +127,9 @@ MonoBehaviour:
   playerStats: {fileID: 0}
   enemyStats: {fileID: 3309976822020174299}
   enemyMovement: {fileID: 8033024128845541314}
+  fakePlayer: {fileID: 0}
   damageReduction: 0
+  isfakePlayer: 0
 --- !u!136 &-52054727070502833
 CapsuleCollider:
   m_ObjectHideFlags: 0

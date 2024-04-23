@@ -15,16 +15,16 @@ MonoBehaviour:
   name: Snake
   model: {fileID: 0}
   enemyID: 4
-  stabilityValue: 0
+  stabilityValue: 5
   stabilityChance: 0
-  baseMaxHealth: 60
-  damage: 20
+  baseMaxHealth: 30
+  damage: 10
   defPenetration: 2
   baseMovementSpeed: 2.6
   baseMinimumMovementSpeed: 1
-  baseDefence: 1
+  baseDefence: 2
   attackRange: 10
-  attackCooldown: 6
+  attackCooldown: 5
   selfHeal: 0
   healthStates: 0
   colourStates:
@@ -34,5 +34,5 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 26db70a5d3d9b6442960f5a78f87fa24, type: 2}
   isRanged: 1
   projectile: {fileID: 7990404126953714990, guid: 56ae165017a149b4cbb2fceba3617594, type: 3}
-  baseProjectileSpeed: 3
+  baseProjectileSpeed: 5
   hasFeatures: 0

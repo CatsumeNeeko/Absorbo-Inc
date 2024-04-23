@@ -15,19 +15,23 @@ MonoBehaviour:
   name: HedgeHog
   model: {fileID: 0}
   enemyID: 3
-  stabilityValue: 4
+  stabilityValue: 10
   stabilityChance: 0
   baseMaxHealth: 50
-  damage: 25
+  damage: 15
   defPenetration: 0
-  baseMovementSpeed: 1
-  baseMinimumMovementSpeed: 1
+  baseMovementSpeed: 0.5
+  baseMinimumMovementSpeed: 0.3
   baseDefence: 4
   attackRange: 3
-  attackCooldown: 8
+  attackCooldown: 6
   selfHeal: 0
   healthStates: 0
-  colourStates: []
+  colourStates:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   isRanged: 1
   projectile: {fileID: 7990404126953714990, guid: 56ae165017a149b4cbb2fceba3617594, type: 3}
   baseProjectileSpeed: 8

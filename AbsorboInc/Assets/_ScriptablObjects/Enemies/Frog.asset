@@ -17,13 +17,13 @@ MonoBehaviour:
   enemyID: 8
   stabilityValue: 10
   stabilityChance: 0
-  baseMaxHealth: 125
+  baseMaxHealth: 80
   damage: 6
-  defPenetration: 0
-  baseMovementSpeed: 2.5
-  baseMinimumMovementSpeed: 2.5
+  defPenetration: 1
+  baseMovementSpeed: 3
+  baseMinimumMovementSpeed: 3
   baseDefence: 2
-  attackRange: 6
+  attackRange: 10
   attackCooldown: 4
   selfHeal: 0
   healthStates: 0

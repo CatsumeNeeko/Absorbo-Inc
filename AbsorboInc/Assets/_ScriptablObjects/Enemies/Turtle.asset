@@ -15,19 +15,23 @@ MonoBehaviour:
   name: Turtle
   model: {fileID: 0}
   enemyID: 2
-  stabilityValue: 0
+  stabilityValue: 4
   stabilityChance: 0
-  baseMaxHealth: 100
+  baseMaxHealth: 80
   damage: 5
   defPenetration: 2
   baseMovementSpeed: 1
   baseMinimumMovementSpeed: 0.6
-  baseDefence: 3
-  attackRange: 3
+  baseDefence: 2
+  attackRange: 2
   attackCooldown: 1
   selfHeal: 0
-  healthStates: 0
-  colourStates: []
+  healthStates: 4
+  colourStates:
+  - {fileID: 2100000, guid: 36c2f6715db18aa4d919e5d185dcc258, type: 2}
+  - {fileID: 2100000, guid: c8fd9527ef324b54cb06ae203c9e02f5, type: 2}
+  - {fileID: 2100000, guid: e82c115ce5cf2504a90092c97e04fe88, type: 2}
+  - {fileID: 2100000, guid: 1e68e9b8cc3abb5489527fea69bcd2c7, type: 2}
   isRanged: 0
   projectile: {fileID: 0}
   baseProjectileSpeed: 0

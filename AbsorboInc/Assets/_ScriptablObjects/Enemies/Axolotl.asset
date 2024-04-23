@@ -15,15 +15,15 @@ MonoBehaviour:
   name: Axolotl
   model: {fileID: 0}
   enemyID: 5
-  stabilityValue: 8
+  stabilityValue: 3
   stabilityChance: 0
-  baseMaxHealth: 125
-  damage: 7
+  baseMaxHealth: 120
+  damage: 9
   defPenetration: 0
   baseMovementSpeed: 3
-  baseMinimumMovementSpeed: 3
+  baseMinimumMovementSpeed: 2.5
   baseDefence: 1
-  attackRange: 1.5
+  attackRange: 3
   attackCooldown: 3
   selfHeal: 0
   healthStates: 0

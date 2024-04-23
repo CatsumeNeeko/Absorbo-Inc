@@ -8,10 +8,15 @@ public class AoeDamage : AbilitySO
     //public float detectionRange;
     public float percentageDamage;
     public float minDamage;
-
+    public GameObject particle;
     public override void ActivateAbility(GameObject owner)
     {
         base.ActivateAbility(owner);
+
+        GameObject partical = Instantiate(particle, owner.transform.position, owner.transform.rotation);
+        ParticleSystem particleSystem = particle.GetComponent<ParticleSystem>();
+        particleSystem.Play();
+        Destroy(partical, particleSystem.main.duration + particleSystem.main.startLifetime.constant);
 
         Collider[] colliders = Physics.OverlapSphere(owner.transform.position, abilityRange);
         List<EnemyStats> enemies = new List<EnemyStats>();

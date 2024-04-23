@@ -33,8 +33,10 @@ public class GameUiMangaer : MonoBehaviour
     [SerializeField] TMP_Text SlotFour;
     [Header("ElevatorVariables")]
     [SerializeField] TMP_Text ElevatorText;
-
-
+    [Header("ExtraStatsVariables")]
+    [SerializeField] TMP_Text AtkDmgTxt;
+    [SerializeField] TMP_Text MoveSpeedTxt;
+    [SerializeField] Image AutoImage;
     void Start()
     {
         //GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -50,6 +52,7 @@ public class GameUiMangaer : MonoBehaviour
         AbilityUi();
         StomachUi();
         ElevatorUi();
+        ExtraStatsUi();
     }
     public void StabilityUi()
     {
@@ -165,5 +168,17 @@ public class GameUiMangaer : MonoBehaviour
         int seconds = Mathf.FloorToInt(gameManager.escapeTimer % 60f);
 
         ElevatorText.text = minutes.ToString("00") + " : " + seconds.ToString("00");
+    }
+    public void ExtraStatsUi()
+    {
+        if (playerStats.canAuto)
+        {
+            AutoImage.color = Color.green;
+        }
+        else
+            AutoImage.color = Color.red;
+
+        AtkDmgTxt.text = "ATK: " + playerStats.currentAutoDamage.ToString();
+        MoveSpeedTxt.text = "SPD: " + playerStats.currentMovementSpeed.ToString();
     }
 }
