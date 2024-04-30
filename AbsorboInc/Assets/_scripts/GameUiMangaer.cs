@@ -36,6 +36,7 @@ public class GameUiMangaer : MonoBehaviour
     [Header("ExtraStatsVariables")]
     [SerializeField] TMP_Text AtkDmgTxt;
     [SerializeField] TMP_Text MoveSpeedTxt;
+    [SerializeField] TMP_Text DefTxt;
     [SerializeField] Image AutoImage;
     void Start()
     {
@@ -180,5 +181,6 @@ public class GameUiMangaer : MonoBehaviour
 
         AtkDmgTxt.text = "ATK: " + playerStats.currentAutoDamage.ToString();
         MoveSpeedTxt.text = "SPD: " + playerStats.currentMovementSpeed.ToString();
+        DefTxt.text = "DEF: " + playerStats.currentDefense.ToString();
     }
 }

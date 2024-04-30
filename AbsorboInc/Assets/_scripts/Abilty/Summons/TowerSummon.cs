@@ -12,6 +12,7 @@ public class TowerSummon : MonoBehaviour
     public float despawnTimer;
     public float damageTimer;
 
+    public GameObject particle;
     private void Update()
     {
         damageTimer += Time.deltaTime;
@@ -29,6 +30,11 @@ public class TowerSummon : MonoBehaviour
     }
     private void CheckForEnemies()
     {
+        GameObject partical = Instantiate(particle, gameObject.transform.position, gameObject.transform.rotation);
+        ParticleSystem particleSystem = partical.GetComponent<ParticleSystem>();
+        particleSystem.Play();
+        Destroy(partical, particleSystem.main.duration + particleSystem.main.startLifetime.constant);
+
         Collider[] colliders = Physics.OverlapSphere(transform.position, detectionRange);
         List<EnemyStats> enemies = new List<EnemyStats>();
 
@@ -41,6 +47,7 @@ public class TowerSummon : MonoBehaviour
             }
         }
         DealDamage(enemies);
+
     }
     private void DealDamage(List<EnemyStats> enemies)
     {

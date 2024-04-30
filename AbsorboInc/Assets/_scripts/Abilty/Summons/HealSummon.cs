@@ -14,6 +14,8 @@ public class HealSummon : MonoBehaviour
     public float despawnTimer;
     public float drainTimer;
 
+    public GameObject outParticle;
+    public GameObject inParticle;
     private void Update()
     {
         drainTimer += Time.deltaTime;
@@ -32,6 +34,13 @@ public class HealSummon : MonoBehaviour
     }
     private void CheckForEnemies()
     {
+        GameObject partical = Instantiate(outParticle, gameObject.transform.position, gameObject.transform.rotation);
+        ParticleSystem particleSystem = partical.GetComponent<ParticleSystem>();
+        particleSystem.Play();
+        Destroy(partical, particleSystem.main.duration + particleSystem.main.startLifetime.constant);
+
+
+
         Collider[] colliders = Physics.OverlapSphere(transform.position, detectionRange);
         List<EnemyStats> enemies = new List<EnemyStats>();
         foreach (Collider collider in colliders)
@@ -44,6 +53,8 @@ public class HealSummon : MonoBehaviour
             
         }
         DrainEnemies(enemies);
+
+
     }
     private void DrainEnemies(List<EnemyStats> enemies )
     {
@@ -61,5 +72,15 @@ public class HealSummon : MonoBehaviour
 
             GameObject.FindGameObjectWithTag("Player").GetComponent<HealthManager>().HealDamage(healAmmount);
         }
+    }
+
+
+    private IEnumerator InsideParticle()
+    {
+        yield return new WaitForSeconds(1f);
+        GameObject inParticle = Instantiate(outParticle, gameObject.transform.position, gameObject.transform.rotation);
+        ParticleSystem particleSystem = inParticle.GetComponent<ParticleSystem>();
+        particleSystem.Play();
+        Destroy(inParticle, particleSystem.main.duration + particleSystem.main.startLifetime.constant);
     }
 }

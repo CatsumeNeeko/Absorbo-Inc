@@ -103,3 +103,4 @@ MonoBehaviour:
   tickInterval: 2
   despawnTimer: 0
   damageTimer: 0
+  particle: {fileID: 551231448649125683, guid: e8c73ae17b6015940ab5d9a4db8a4f43, type: 3}
