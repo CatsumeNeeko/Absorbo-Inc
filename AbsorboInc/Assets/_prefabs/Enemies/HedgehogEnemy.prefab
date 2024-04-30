@@ -130,6 +130,7 @@ MonoBehaviour:
   fakePlayer: {fileID: 0}
   damageReduction: 0
   isfakePlayer: 0
+  bloodParticle: {fileID: 551231448649125683, guid: ca76316115e2af343931efed6909b834, type: 3}
 --- !u!65 &5039176976489079820
 BoxCollider:
   m_ObjectHideFlags: 0

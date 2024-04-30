@@ -12,7 +12,7 @@ public class HealthManager : MonoBehaviour
     [Header("Info")]
     [SerializeField] float damageReduction;
     [SerializeField] bool isfakePlayer;
-
+    [SerializeField] GameObject bloodParticle;
 
 
 
@@ -59,6 +59,11 @@ public class HealthManager : MonoBehaviour
                 UpdateMaterial();
             }
         }
+
+        GameObject partical = Instantiate(bloodParticle, gameObject.transform.position, gameObject.transform.rotation);
+        ParticleSystem particleSystem = bloodParticle.GetComponent<ParticleSystem>();
+        particleSystem.Play();
+        Destroy(partical, particleSystem.main.duration + particleSystem.main.startLifetime.constant);
     }
     public void HealDamage(float heal)
     {

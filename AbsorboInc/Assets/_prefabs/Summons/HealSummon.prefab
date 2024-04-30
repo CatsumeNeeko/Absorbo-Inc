@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 8680198fad1458e4781db17ae9eb14f9, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 8680198fad1458e4781db17ae9eb14f9, type: 3}
       propertyPath: m_LocalScale.x
@@ -105,3 +105,5 @@ MonoBehaviour:
   tickInterval: 10
   despawnTimer: 0
   drainTimer: 0
+  outParticle: {fileID: 551231448649125683, guid: 39879ba8c803ed74ebf5b545439ff584, type: 3}
+  inParticle: {fileID: 551231448649125683, guid: 45e49106e2250764894b8b6e8a8b9549, type: 3}
