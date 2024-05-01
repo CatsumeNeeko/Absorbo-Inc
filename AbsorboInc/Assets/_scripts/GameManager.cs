@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     [Header("Escape")]
     [SerializeField] GameObject elevator;
     [SerializeField] GameObject elevatorText;
+    [SerializeField] GameObject escapeObject;
     public float escapeTimer;
     public float maxEscapeTimer = 300f;
     private bool canEscape;
@@ -58,6 +59,7 @@ public class GameManager : MonoBehaviour
     {
         Destroy(elevator);
         elevatorText.SetActive(false);
+        escapeObject.SetActive(true);
     }
     public void GameOver()
     {

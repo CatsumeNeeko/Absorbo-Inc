@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02b17bbb5a1820e4a9b7d96fce733602, type: 3}
   m_Name: Reflect
   m_EditorClassIdentifier: 
-  name: Relfect
+  name: Reflect
   isPassive: 0
   cooldown: 0
   hasRange: 0

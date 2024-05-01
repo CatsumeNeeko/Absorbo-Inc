@@ -131,6 +131,7 @@ MonoBehaviour:
   damageReduction: 0
   isfakePlayer: 0
   bloodParticle: {fileID: 551231448649125683, guid: ca76316115e2af343931efed6909b834, type: 3}
+  deadParticle: {fileID: 551231448649125683, guid: 2acb1e4e10050d141bb0e7a6792f2f8c, type: 3}
 --- !u!136 &-52054727070502833
 CapsuleCollider:
   m_ObjectHideFlags: 0

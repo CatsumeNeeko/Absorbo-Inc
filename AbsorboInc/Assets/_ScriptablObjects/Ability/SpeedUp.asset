@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ee63db2b6430e640a9fe1838b3bc9ba, type: 3}
   m_Name: SpeedUp
   m_EditorClassIdentifier: 
-  name: Boost Boost
+  name: Fast Track
   isPassive: 0
   cooldown: 3
+  hasRange: 0
+  abilityRange: 0
   speedMultiplier: 2
   speedDuration: 1

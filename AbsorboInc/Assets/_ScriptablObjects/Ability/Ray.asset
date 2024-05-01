@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6bc89f58c14ed4448f74d595f3877a1, type: 3}
   m_Name: Ray
   m_EditorClassIdentifier: 
-  name: pew pew
+  name: Ray
   isPassive: 0
   cooldown: 6
   hasRange: 1
