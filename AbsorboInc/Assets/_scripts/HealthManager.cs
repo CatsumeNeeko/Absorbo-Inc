@@ -13,7 +13,7 @@ public class HealthManager : MonoBehaviour
     [SerializeField] float damageReduction;
     [SerializeField] bool isfakePlayer;
     [SerializeField] GameObject bloodParticle;
-
+    [SerializeField] GameObject deadParticle;
 
 
     public void TakeDamage(float damage)
@@ -80,7 +80,14 @@ public class HealthManager : MonoBehaviour
         else
         {
             enemyStats.isDead = true;
+
+            GameObject partical = Instantiate(deadParticle, gameObject.transform.position, gameObject.transform.rotation);
+            ParticleSystem particleSystem = deadParticle.GetComponent<ParticleSystem>();
+            particleSystem.Play();
+            Destroy(partical, particleSystem.main.duration + particleSystem.main.startLifetime.constant);
         }
+
+
     }
 
     void UpdateMaterial()

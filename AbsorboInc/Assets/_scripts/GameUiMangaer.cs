@@ -88,7 +88,7 @@ public class GameUiMangaer : MonoBehaviour
             ConsumeAbility.gameObject.SetActive(false);
         }
 
-
+        //
         if(playerStats.canAbilityOne == true)
         {
             AbilityOne.gameObject.SetActive(true);
@@ -97,8 +97,17 @@ public class GameUiMangaer : MonoBehaviour
         {
             AbilityOne.gameObject.SetActive(false);
         }
+        if (playerStats.abilities[0].isPassive)
+        {
+            AbilityOne.color = Color.blue;
+        }
+        else
+        {
+            AbilityOne.color = Color.white;
+        }
+        //
 
-
+        //
         if(playerStats.canAbilityTwo == true)
         {
             AbilityTwo.gameObject.SetActive(true);
@@ -108,8 +117,18 @@ public class GameUiMangaer : MonoBehaviour
             AbilityTwo.gameObject.SetActive(false);
         }
 
+        if (playerStats.abilities[1].isPassive)
+        {
+            AbilityOne.color = Color.blue;
+        }
+        else
+        {
+            AbilityOne.color = Color.white;
+        }
+        //
 
-        if(playerStats.canAbilityThree == true)
+        //
+        if (playerStats.canAbilityThree == true)
         {
             AbilityThree.gameObject.SetActive(true);
         }
@@ -118,7 +137,15 @@ public class GameUiMangaer : MonoBehaviour
             AbilityThree.gameObject.SetActive(false);
         }
 
-
+        if (playerStats.abilities[2].isPassive)
+        {
+            AbilityOne.color = Color.blue;
+        }
+        else
+        {
+            AbilityOne.color = Color.white;
+        }
+        //
 
         if (playerStats.abilities[0] != null)
         {

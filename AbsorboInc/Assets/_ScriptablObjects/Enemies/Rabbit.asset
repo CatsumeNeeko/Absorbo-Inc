@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: 
   model: {fileID: 0}
-  enemyID: 3
+  enemyID: 1
   stabilityValue: 2
   stabilityChance: 10
   baseMaxHealth: 70
