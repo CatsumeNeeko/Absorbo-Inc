@@ -23,7 +23,7 @@ MonoBehaviour:
   baseMovementSpeed: 3
   baseMinimumMovementSpeed: 3
   baseDefence: 2
-  attackRange: 10
+  attackRange: 5
   attackCooldown: 4
   selfHeal: 0
   healthStates: 0

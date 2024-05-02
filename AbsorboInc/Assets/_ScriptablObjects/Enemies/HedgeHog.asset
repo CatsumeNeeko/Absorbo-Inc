@@ -22,7 +22,7 @@ MonoBehaviour:
   defPenetration: 0
   baseMovementSpeed: 0.5
   baseMinimumMovementSpeed: 0.3
-  baseDefence: 4
+  baseDefence: 2
   attackRange: 3
   attackCooldown: 6
   selfHeal: 0
