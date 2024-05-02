@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class IntroSceneUI : MonoBehaviour
 {
     [SerializeField] GameObject mainUi, controlUi;
+    [SerializeField] GameObject abilityOne,abilityTwo, abilityThree;
 
     public void PlayGame()
     {
@@ -19,9 +20,35 @@ public class IntroSceneUI : MonoBehaviour
     {
         mainUi.gameObject.SetActive(true);
         controlUi.gameObject.SetActive(false);
+        abilityOne.gameObject.SetActive(false);
+        abilityTwo.gameObject.SetActive(false);
+        abilityThree.gameObject.SetActive(false);
     }
     public void ExitGame()
     {
         Application.Quit();
+    }
+    public void AbiltiyP1()
+    {
+        abilityOne.gameObject.SetActive(true);
+
+        mainUi.gameObject.SetActive(false);
+        controlUi.gameObject.SetActive(false);
+        abilityTwo.gameObject.SetActive(false);
+        abilityThree.gameObject.SetActive(false);
+    }
+    public void AbiltiyP2()
+    {
+        abilityTwo.gameObject.SetActive(true);
+
+        abilityOne.gameObject.SetActive(false);
+        abilityThree.gameObject.SetActive(false);
+    }
+    public void AbiltiyP3()
+    {
+        abilityThree.gameObject.SetActive(true);
+
+        abilityOne.gameObject.SetActive(false);
+        abilityTwo.gameObject.SetActive(false);
     }
 }

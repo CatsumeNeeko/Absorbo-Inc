@@ -55,6 +55,21 @@ public class PlayerMovement : MonoBehaviour
                 }
             }
         }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hit))
+            {
+                string objectTag = hit.collider.tag;
+                switch (objectTag)
+                {
+                    case "Enemy":
+                        AutoAttack(hit);
+                        break;
+                }
+            }
+        }
         #region Ability Casting 
 
         //Consume
@@ -214,6 +229,16 @@ public class PlayerMovement : MonoBehaviour
         {
             Gizmos.color = Color.magenta;
             Gizmos.DrawWireSphere(transform.position, playerStats.abilities[0].abilityRange);
+        }
+        if (rc2)
+        {
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawWireSphere(transform.position, playerStats.abilities[1].abilityRange);
+        }
+        if (rc3)
+        {
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawWireSphere(transform.position, playerStats.abilities[2].abilityRange);
         }
     }
 }
