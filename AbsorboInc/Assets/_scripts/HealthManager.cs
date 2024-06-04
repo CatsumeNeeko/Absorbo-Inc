@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class HealthManager : MonoBehaviour
 {
@@ -18,12 +19,12 @@ public class HealthManager : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
-        if(isfakePlayer)
+        if (isfakePlayer)
         {
             fakePlayer.hitCount++;
             Debug.Log("Hit increase");
         }
-        if(playerStats != null)
+        if (playerStats != null)
         {
             for (int i = 0; i < playerStats.abilities.Length; i++)
             {
@@ -45,14 +46,14 @@ public class HealthManager : MonoBehaviour
                 }
             }
         }
-        else 
+        else
         {
             damageReduction = enemyStats.currentDefense / 2;
-            
-            if(enemyStats.currentHealth > 0)
+
+            if (enemyStats.currentHealth > 0)
             {
                 enemyStats.currentHealth -= damage / damageReduction;
-                if(enemyStats.currentHealth <= 0)
+                if (enemyStats.currentHealth <= 0)
                 {
                     Die();
                 }
@@ -76,11 +77,12 @@ public class HealthManager : MonoBehaviour
 
     private void Die()
     {
-        if(playerStats != null) { }
+        if (playerStats != null) { }
         else
         {
             enemyStats.isDead = true;
-
+            NavMeshAgent agent = gameObject.GetComponent<NavMeshAgent>();
+            agent.isStopped = true;
             GameObject partical = Instantiate(deadParticle, gameObject.transform.position, gameObject.transform.rotation);
             ParticleSystem particleSystem = deadParticle.GetComponent<ParticleSystem>();
             particleSystem.Play();

@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/StartingScene.unity
     guid: 3930c4e8da3b720429521f15b712d07f
   - enabled: 1
-    path: Assets/Scenes/MainScene.unity
+    path: Assets/Scenes/MainSceneMedium.unity
     guid: a4e1c6793e76a374191f7ca4de0d52f5
   - enabled: 1
     path: Assets/Scenes/GameOverScene.unity
@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/VictoryScene.unity
     guid: 7a1a32f7e81065c43a96662b7cd35746
+  - enabled: 1
+    path: Assets/Scenes/MainSceneHeavy.unity
+    guid: 1e50cd0450a0d164aa8c3b0913bce750
+  - enabled: 1
+    path: Assets/Scenes/MainSceneLight.unity
+    guid: 89be1ac0ad47a0c4684734e318a1c1bf
   m_configObjects: {}

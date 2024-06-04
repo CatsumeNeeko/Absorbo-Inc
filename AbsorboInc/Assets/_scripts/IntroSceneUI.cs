@@ -4,12 +4,27 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class IntroSceneUI : MonoBehaviour
 {
+    [SerializeField] GameObject playGameUI;
     [SerializeField] GameObject mainUi, controlUi;
-    [SerializeField] GameObject abilityOne,abilityTwo, abilityThree;
+    [SerializeField] GameObject abilityOne, abilityTwo, abilityThree;
 
-    public void PlayGame()
+    public void PlayScreen()
     {
-        SceneManager.LoadScene("MainScene");
+        mainUi.gameObject.SetActive(false);
+        playGameUI.gameObject.SetActive(true);
+    }
+
+    public void PlayGameMed()
+    {
+        SceneManager.LoadScene("MainSceneMedium");
+    }
+    public void PlayGameLight()
+    {
+        SceneManager.LoadScene("MainSceneLight");
+    }
+    public void PlayGameHeavy()
+    {
+        SceneManager.LoadScene("MainSceneHeavy");
     }
     public void Controls()
     {
@@ -23,6 +38,7 @@ public class IntroSceneUI : MonoBehaviour
         abilityOne.gameObject.SetActive(false);
         abilityTwo.gameObject.SetActive(false);
         abilityThree.gameObject.SetActive(false);
+        playGameUI.gameObject.SetActive(false);
     }
     public void ExitGame()
     {

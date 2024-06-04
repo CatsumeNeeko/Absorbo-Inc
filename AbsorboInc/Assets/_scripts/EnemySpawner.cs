@@ -35,6 +35,7 @@ public class EnemySpawner : MonoBehaviour
 
 
             randomPosition.y = 0f;
+            
 
 
             Instantiate(enemyPrefab, randomPosition, Quaternion.identity);

@@ -15,4 +15,8 @@ MonoBehaviour:
   name: Dash
   isPassive: 0
   cooldown: 4
+  hasRange: 0
+  abilityRange: 0
   dashDistance: 5
+  speedMultiplier: 2
+  speedDuration: 0.5

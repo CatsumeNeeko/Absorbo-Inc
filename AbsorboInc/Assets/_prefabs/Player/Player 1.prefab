@@ -54,6 +54,7 @@ MonoBehaviour:
   playerCharacterStats: {fileID: 11400000, guid: 87d1f48083cc1bc41badae0dbb29d6b0, type: 2}
   playerAbilityList: {fileID: 3553890196362548506}
   abilities: []
+  gameManager: {fileID: 0}
   currentHealth: 0
   maxHealth: 0
   currentHealthRegen: 0
@@ -152,6 +153,8 @@ MonoBehaviour:
   fakePlayer: {fileID: 0}
   damageReduction: 0
   isfakePlayer: 0
+  bloodParticle: {fileID: 0}
+  deadParticle: {fileID: 0}
 --- !u!143 &7028912759613779111
 CharacterController:
   m_ObjectHideFlags: 0
@@ -288,7 +291,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 748f27c3f9b387b49892e7d608110345, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.64
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 748f27c3f9b387b49892e7d608110345, type: 3}
       propertyPath: m_LocalPosition.z

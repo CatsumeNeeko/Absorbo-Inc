@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -42,6 +43,7 @@ public class PlayerStats : MonoBehaviour
     public bool canAbilityOne = true, canAbilityTwo = true ,canAbilityThree = true;
     public float abilityOneTimer , abilityTwoTimer , abilityThreeTimer ;
 
+    
     private void Start()
     {
         //array
@@ -59,6 +61,7 @@ public class PlayerStats : MonoBehaviour
         currentHealth = maxHealth;
         currentDefense = maxDefense;
         currentHealthRegen = maxHealthRegen;
+        
         currentResourceAmmount = maxResourceAmmount;
         resourceRegen = playerCharacterStats.baseResourceRegen;
         currentMovementSpeed = minMovementSpeed;

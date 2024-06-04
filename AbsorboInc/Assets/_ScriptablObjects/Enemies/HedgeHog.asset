@@ -28,10 +28,10 @@ MonoBehaviour:
   selfHeal: 0
   healthStates: 0
   colourStates:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: -8469494145858465668, guid: a334b157cf790f543b13089719de27e7, type: 3}
+  - {fileID: -8469494145858465668, guid: a334b157cf790f543b13089719de27e7, type: 3}
+  - {fileID: -8469494145858465668, guid: a334b157cf790f543b13089719de27e7, type: 3}
+  - {fileID: -8469494145858465668, guid: a334b157cf790f543b13089719de27e7, type: 3}
   isRanged: 1
   projectile: {fileID: 7990404126953714990, guid: 56ae165017a149b4cbb2fceba3617594, type: 3}
   baseProjectileSpeed: 8
